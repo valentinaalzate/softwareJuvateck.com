@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="contenido-trabajadores">
+  <!-- Pestaña -->
+  <div class="tabs-trabajadores">
+    <button class="tab-btn active">
+      <img src="imagenes/usuario.png" alt="Usuario" class="icono-usuario">
+      Trabajadores
+    </button>
+  </div>
+
+  <!-- Panel gris -->
+  <section class="panel-trabajadores">
+    <!-- Controles -->
+    <div class="controles-trabajadores">
+      <input type="text" placeholder="Buscar trabajador..." />
+      <button class="btn-buscar">Buscar</button>
+
+      <div class="select-filtro-container">
+    <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+    <select class="select-estado">
+      <option value="">Filtrar</option>
+      <option value="hoy">Hoy</option>
+      <option value="semana">Esta semana</option>
+      <option value="mes">Este mes</option>
+    </select>
+  </div>
+
+  <!-- ROL (nuevo, mismo estilo) -->
+  <div class="select-filtro-container">
+    <select class="select-estado">
+      <option value="">Rol</option>
+      <option value="admin">Administrador</option>
+      <option value="cajero">Cajero</option>
+      <option value="vendedor">Vendedor</option>
+    </select>
+  </div>
+    </div>
+
+    <!-- Tabla de trabajadores -->
+    <div class="tabla-trabajadores">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Rol</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>T-01</td>
+            <td>María</td>
+            <td>López</td>
+            <td>Cajero</td>
+            <td>3214567890</td>
+            <td>
+              <button class="btn-ver" onclick="editarTrabajador()">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Botones inferiores -->
+    <div class="acciones-trabajadores">
+      <button class="btn-editar" onclick="nuevoTrabajador()">Ingresar nuevo trabajador</button>
+      <button class="btn-eliminar" onclick="eliminarTrabajador()">Eliminar trabajador</button>
+    </div>
+  </section>
+</main>
+  <script>
+  // Detecta la página actual (por ejemplo: "home.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+</body>
+</html>

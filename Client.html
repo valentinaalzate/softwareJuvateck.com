@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cliente</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+ <main class="contenido-clientes">
+  <!-- Pestaña única fuera del panel gris -->
+  <div class="tabs-clientes">
+    <button class="tab-btn active">
+      <img src="imagenes/usuario.png" alt="Usuario" class="icono-usuario">
+      Clientes
+    </button>
+  </div>
+
+  <!-- Panel gris -->
+  <section class="panel-clientes">
+    <!-- Controles: solo búsqueda y filtro -->
+    <div class="controles-clientes">
+      <input type="text" placeholder="Buscar cliente..." />
+      <button class="btn-buscar">Buscar</button>
+
+      <div class="select-filtro-container">
+        <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+        <select class="select-estado">
+          <option value="">Filtrar</option>
+          <option value="hoy">Hoy</option>
+          <option value="semana">Esta semana</option>
+          <option value="mes">Este mes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tabla de clientes -->
+    <div class="tabla-clientes">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C-01</td>
+            <td>Juan</td>
+            <td>Alvarez Perez</td>
+            <td>3023453636</td>
+            <td>juan21@gmail.com</td>
+            <td>cll67 #1-23</td>
+            <td>
+              <button class="btn-ver" onclick="abrirFormularioEditar()">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Botones inferiores -->
+    <div class="acciones-clientes">
+      <button class="btn-editar" onclick="abrirFormularioAgregar()">Agregar usuario</button>
+      <button class="btn-eliminar" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+    </div>
+  </section>
+</main>
+<section id="formulario-cliente2" class="formulario-cliente2" style="display: none;">
+  <form class="formulario-detalle" onsubmit="agregarCliente(); return false;">
+    <h3>Registrar Cliente</h3>
+
+  
+    <div class="grupo-campos">
+      <label>Código:</label>
+      <input type="text" id="codigo-cliente" readonly />
+    </div>
+
+ 
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Nombre:</label>
+        <input type="text" id="nombre-cliente" />
+      </div>
+      <div class="grupo-campos">
+        <label>Apellido:</label>
+        <input type="text" id="apellido-cliente" />
+      </div>
+    </div>
+
+   
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Teléfono:</label>
+        <input type="text" id="telefono-cliente" />
+      </div>
+      <div class="grupo-campos">
+        <label>Dirección:</label>
+        <input type="text" id="direccion-cliente" />
+      </div>
+    </div>
+
+ 
+    <div class="grupo-campos">
+      <label>Email:</label>
+      <input type="email" id="email-cliente" />
+    </div>
+
+   
+    
+    <div class="botones-cliente2">
+      <button type="submit" class="btn-agregar-cliente2">Agregar</button>
+      <button type="button" class="btn-cancelar-cliente2" onclick="cerrarFormularioCliente()">Cancelar</button>
+    </div>
+
+  </form>
+</section>
+
+<div id="mensaje-cliente" class="mensaje-cliente" style="display: none;">
+  <div class="contenido-mensaje">
+    <img src="imagenes/verificado.png" alt="Cliente agregado" class="icono-verificado" />
+    <span class="texto-cliente" id="texto-cliente">Cliente registrado correctamente</span>
+  </div>
+</div>
+
+  <script>
+  // Detecta la página actual (por ejemplo: "home.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  function abrirFormularioAgregar() {
+  document.getElementById("formulario-cliente2").style.display = "block";
+}
+
+// Cerrar formulario de cliente
+function cerrarFormularioCliente() {
+  document.getElementById("formulario-cliente2").style.display = "none";
+}
+
+// Agregar cliente y mostrar mensaje
+function agregarCliente() {
+  // Aquí podrías capturar los valores de los inputs si quieres guardarlos
+  const nombre = document.getElementById("nombre-cliente").value;
+  const apellido = document.getElementById("apellido-cliente").value;
+
+  // Cerrar formulario
+  cerrarFormularioCliente();
+
+  // Mostrar mensaje de confirmación
+  const mensaje = document.getElementById("mensaje-cliente");
+  const texto = document.getElementById("texto-cliente");
+
+  texto.textContent = `Cliente ${nombre} ${apellido} registrado correctamente`;
+  mensaje.style.display = "flex";
+
+  // Ocultar mensaje automáticamente después de 3 segundos
+  setTimeout(() => {
+    mensaje.style.display = "none";
+  }, 3000);
+}
+
+// Activar selección de filas en clientes
+document.querySelectorAll(".tabla-clientes tbody tr").forEach(fila => {
+  fila.addEventListener("click", function (e) {
+
+    // Evita que el click en el botón "Editar" seleccione la fila
+    if (e.target.tagName === "BUTTON") return;
+
+    // Quitar selección previa
+    document.querySelectorAll(".tabla-clientes tbody tr")
+      .forEach(f => f.classList.remove("fila-seleccionada"));
+
+    // Seleccionar la fila actual
+    this.classList.add("fila-seleccionada");
+  });
+});
+</script>
+</body>
+</html>

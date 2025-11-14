@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factura</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+<main class="contenido-facturas">
+  <!-- Encabezado superior: campana -->
+  <div class="header-top">
+    <div class="campana-container">
+      <img src="imagenes/campana.png" alt="Notificaciones" class="campana-icono" />
+      <div id="notificacion-factura" class="notificacion-factura">
+        <p class="texto-notificacion">Se generó una factura nueva.</p>
+        <a href="#" class="ver-mas">Ver más</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pestañas -->
+  <div class="tabs-facturas">
+    <button class="tab-btn active" data-tab="facturas">Facturas</button>
+    <button class="tab-btn icono-historial" data-tab="historial">
+      <img src="imagenes/relog.png" alt="Historial" class="icono-relog"> Historial
+    </button>
+    <button class="tab-btn" data-tab="pagadas">Facturas pagadas</button>
+  </div>
+
+  <!-- Panel gris -->
+  <section class="panel-facturas">
+    <!-- Tab: Facturas -->
+    <div class="contenido-tab" id="facturas">
+      <div class="controles-facturas">
+        <input type="text" placeholder="Buscar factura..." />
+        <button class="btn-buscar">Buscar</button>
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tabla -->
+      <div class="tabla-facturas">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Factura</th>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F01</td>
+              <td>001</td>
+              <td>22/10/2025</td>
+              <td>Juan Alvarez Perez</td>
+              <td>$24.000</td>
+              <td>Pendiente</td>
+              <td>
+                <button class="btn-ver" data-target="formulario-factura">Ver más</button>
+                <button class="btn-enviar">Enviar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Botones inferiores -->
+      <div class="acciones-facturas">
+        <button class="btn-editar" onclick="abrirFormularioEditar()">Editar</button>
+        <button class="btn-eliminar" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Tab: Historial -->
+    <div class="contenido-tab" id="historial" style="display: none;">
+      <div class="controles-facturas">
+        <input type="text" placeholder="Buscar historial..." />
+        <button class="btn-buscar">Buscar</button>
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+
+      <div class="tabla-facturas">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Factura</th>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F02</td>
+              <td>002</td>
+              <td>21/10/2025</td>
+              <td>Maria Gómez</td>
+              <td>$18.500</td>
+              <td>Pagado</td>
+              <td>
+                <button class="btn-ver" data-target="formulario-factura">Ver más</button>
+                <button class="btn-enviar">Enviar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="acciones-facturas">
+        <button class="btn-editar" onclick="abrirFormularioEditar()">Editar</button>
+        <button class="btn-eliminar" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Tab: Facturas pagadas -->
+    <div class="contenido-tab" id="pagadas" style="display: none;">
+      <div class="controles-facturas">
+        <input type="text" placeholder="Buscar pagadas..." />
+        <button class="btn-buscar">Buscar</button>
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+      </div>
+
+      <div class="tabla-facturas">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Factura</th>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>F03</td>
+              <td>003</td>
+              <td>20/10/2025</td>
+              <td>Carlos Mejía</td>
+              <td>$32.000</td>
+              <td>Pagado</td>
+              <td>
+                <button class="btn-ver" data-target="formulario-factura">Ver más</button>
+                <button class="btn-enviar">Enviar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="acciones-facturas">
+        <button class="btn-editar" onclick="abrirFormularioEditar()">Editar</button>
+        <button class="btn-eliminar" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <div id="mensaje-envio-factura" class="mensaje-envio-factura" style="display: none;">
+  <div class="contenido-mensaje">
+    <img src="imagenes/verificado.png" alt="Factura enviada" class="icono-verificado" />
+    <span class="texto-envio">La factura fue enviada correctamente</span>
+  </div>
+</div>
+
+<div id="mensaje-editado-factura" class="mensaje-editado-factura" style="display: none;">
+  <div class="contenido-mensaje">
+    <img src="imagenes/verificado.png" alt="Factura editada" class="icono-verificado" />
+    <span class="texto-editado">La factura fue editada correctamente</span>
+  </div>
+</div>
+
+  <!--formulario de factura-->
+ <div id="formulario-factura" class="formulario-factura" style="display: none;">
+  <div id="contenido-factura" class="formulario-detalle">
+    <!-- Fecha -->
+    <div class="fila-campo">
+      <label>Fecha:</label>
+      <input type="text" value="13/11/2025" />
+    </div>
+
+   <!-- Nº Factura y Nº Pedido -->
+<div class="fila-doble">
+  <div class="fila-campo">
+    <label>N° Factura:</label>
+    <input type="text" value="F001" />
+  </div>
+  <div class="fila-campo">
+    <label>N° Pedido:</label>
+    <input type="text" value="P001" />
+  </div>
+</div>
+
+<!-- Cliente -->
+<div class="fila-campo">
+  <label>Cliente:</label>
+  <input type="text" value="Juan Pérez" />
+</div>
+
+<!-- Teléfono y Dirección (misma clase que los demás) -->
+<div class="fila-doble">
+  <div class="fila-campo">
+    <label>Teléfono:</label>
+    <input type="text" />
+  </div>
+  <div class="fila-campo">
+    <label>Dirección:</label>
+    <input type="text" />
+  </div>
+</div>
+
+    <!-- Tabla de productos -->
+    <div class="tabla-productos">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Producto</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Producto A</td>
+            <td>2</td>
+            <td>$12.000</td>
+            <td>$24.000</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Producto B</td>
+            <td>1</td>
+            <td>$15.000</td>
+            <td>$15.000</td>
+          </tr>
+           <tr>
+            <td></td>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="linea-total" />
+
+    <!-- Estado y Total -->
+    <div class="fila-total">
+  <div class="fila-campo">
+    <label>Estado:</label>
+    <input type="text" value="Pendiente" />
+  </div>
+  <div class="fila-campo">
+    <label>Total:</label>
+    <input type="text" value="$39.000" />
+  </div>
+</div>
+
+    <!-- Botones -->
+   <div class="acciones-factura">
+      <button class="btn-descargar" onclick="descargarPDF()">Descargar</button>
+      <button class="btn-cancelar" onclick="cerrarFormulario()">Cerrar</button>
+    </div>
+  </div>
+</div>
+<!-- formulario de edición -->
+<div id="formulario-editar" class="formulario-editar" style="display: none;">
+  <div class="formulario-detalle">
+    <!-- Fecha -->
+    <div class="fila-campo">
+      <label>Fecha:</label>
+      <input type="text" value="13/11/2025" />
+    </div>
+
+    <!-- Nº Factura y Nº Pedido -->
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>N° Factura:</label>
+        <input type="text" value="F001" />
+      </div>
+      <div class="fila-campo">
+        <label>N° Pedido:</label>
+        <input type="text" value="P001" />
+      </div>
+    </div>
+
+    <!-- Cliente -->
+    <div class="fila-campo">
+      <label>Cliente:</label>
+      <input type="text" value="Juan Pérez" />
+    </div>
+
+    <!-- Teléfono y Dirección -->
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>Teléfono:</label>
+        <input type="text" />
+      </div>
+      <div class="fila-campo">
+        <label>Dirección:</label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <!-- Tabla de productos -->
+    <div class="tabla-productos">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Producto</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Producto A</td>
+            <td>2</td>
+            <td>$12.000</td>
+            <td>$24.000</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Producto B</td>
+            <td>1</td>
+            <td>$15.000</td>
+            <td>$15.000</td>
+          </tr>
+          <tr>
+            <td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td></td><td></td><td></td><td></td><td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="linea-total" />
+
+    <!-- Estado y Total -->
+    <div class="fila-total">
+      <div class="fila-campo">
+        <label>Estado:</label>
+        <select>
+          <option>Pendiente</option>
+          <option>Pagado</option>
+          <option>Cancelado</option>
+        </select>
+      </div>
+      <div class="fila-campo">
+        <label>Total:</label>
+        <input type="text" value="$39.000" />
+      </div>
+    </div>
+
+    <!-- Botones -->
+     <div class="acciones-factura2">
+      <button class="btn-editar2" onclick="guardarEdicion()">Editar</button>
+      <button class="btn-cancelar" onclick="cerrarFormularioEditar()">Cerrar</button>
+    </div>
+
+</div>
+
+  <script>
+  // Detecta la página actual (por ejemplo: "home.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+
+  //Para las pestañas
+  const tabs = document.querySelectorAll('.tabs-facturas .tab-btn');
+  const contenidos = document.querySelectorAll('.panel-facturas .contenido-tab');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const targetId = tab.getAttribute('data-tab');
+      contenidos.forEach(c => {
+        c.style.display = c.id === targetId ? 'block' : 'none';
+      });
+    });
+  });
+
+
+  
+
+// Detectar clic en botones "Enviar"
+const btnsEnviar = document.querySelectorAll('.btn-enviar');
+
+btnsEnviar.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const mensaje = document.getElementById('mensaje-envio-factura');
+    mensaje.style.display = 'flex';
+
+    // Ocultar automáticamente después de 2 segundos
+    setTimeout(() => {
+      mensaje.style.display = 'none';
+    }, 2000);
+  });
+});
+
+
+ const campana = document.querySelector('.campana-icono');
+const notificacion = document.getElementById('notificacion-factura');
+
+campana.addEventListener('click', () => {
+  const visible = notificacion.style.display === 'flex';
+  notificacion.style.display = visible ? 'none' : 'flex';
+});
+
+// Mostrar al hacer clic en "Ver más"
+document.querySelectorAll('.btn-ver').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-target');
+    document.getElementById(target).style.display = 'block';
+  });
+});
+
+// Cerrar formulario
+function cerrarFormulario() {
+  document.getElementById('formulario-factura').style.display = 'none';
+}
+
+// Mostrar formulario de edición
+function abrirFormularioEditar() {
+  const formulario = document.getElementById("formulario-editar");
+  formulario.style.display = "block";
+}
+
+// Guardar edición: mostrar mensaje y cerrar formulario de edición
+function guardarEdicion() {
+  const mensaje = document.getElementById('mensaje-editado-factura');
+  const formulario = document.getElementById("formulario-editar");
+
+  // Mostrar mensaje
+  mensaje.style.display = 'flex';
+
+  // Cerrar formulario de edición
+  formulario.style.display = "none";
+
+  // Ocultar mensaje automáticamente después de 2 segundos
+  setTimeout(() => {
+    mensaje.style.display = 'none';
+  }, 2000);
+}
+
+// Cerrar formulario de edición manualmente (botón Cancelar)
+function cerrarFormularioEditar() {
+  document.getElementById("formulario-editar").style.display = "none";
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  //  Selección de filas en cualquier tabla
+  document.querySelectorAll('.tabla-facturas tbody tr').forEach(fila => {
+    fila.addEventListener('click', (e) => {
+      const tablaActual = fila.closest('.tabla-facturas');
+      tablaActual.querySelectorAll('tr').forEach(f => f.classList.remove('fila-seleccionada'));
+      fila.classList.add('fila-seleccionada');
+      e.stopPropagation();
+    });
+  });
+
+  //Deseleccionar al hacer clic fuera de tabla y acciones
+  document.addEventListener('click', (e) => {
+    const esClicEnTabla = e.target.closest('.tabla-facturas');
+    const esClicEnAcciones = e.target.closest('.acciones-facturas');
+    if (!esClicEnTabla && !esClicEnAcciones) {
+      document.querySelectorAll('.tabla-facturas tbody tr')
+        .forEach(f => f.classList.remove('fila-seleccionada'));
+    }
+  });
+
+  // Activar botón Eliminar en todas las pestañas
+  document.querySelectorAll('.btn-eliminar').forEach(btn => {
+    btn.addEventListener('click', mostrarConfirmacionEliminar);
+  });
+});
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script>
+  function descargarPDF() {
+    const elemento = document.getElementById("contenido-factura");
+    const botones = document.querySelector(".acciones-factura");
+
+    // Ocultar botones temporalmente
+    botones.style.display = "none";
+
+    const opciones = {
+      margin: 6,
+      filename: 'Factura.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 1.5 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set({
+    margin: 4,
+    filename: 'Factura.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2.2 }, // 🔹 más grande
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).from(elemento).save().then(() => {
+      botones.style.display = "flex";
+    });
+  }
+
+  function cerrarFormulario() {
+    document.getElementById("formulario-factura").style.display = "none";
+  }
+</script>
+</body>
+</html>

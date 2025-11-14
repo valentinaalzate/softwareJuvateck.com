@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pedido</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="contenido-pedidos">
+  <!-- Encabezado superior:  campana  -->
+  <div class="header-top">
+  <div class="campana-container">
+    <img src="imagenes/campana.png" alt="Notificaciones" class="campana-icono" />
+  </div>
+</div>
+
+  <!-- Pestañas  -->
+  <div class="tabs-pedidos">
+  <button class="tab-btn active" data-tab="pendiente">Pendiente</button>
+
+  <button class="tab-btn icono-historial" data-tab="historial">
+    <img src="imagenes/relog.png" alt="Historial" class="icono-relog">
+    Historial
+  </button>
+
+  <button class="tab-btn" data-tab="tomados">Pedidos tomados</button>
+</div>
+
+  <!-- Panel gris: filtros + tabla + botones -->
+  <section class="panel-pedidos">
+    <!-- Contenido: Pendiente -->
+    <div class="contenido-tab" id="pendiente">
+      <!-- Filtros -->
+      <div class="controles-pedidos">
+        <input type="text" placeholder="" />
+        <button class="btn-buscar">Buscar</button>
+
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+          <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+         </div>
+      </div>
+
+      <!-- Tabla -->
+      <div class="tabla-pedidos">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Estado</th>
+              <th>Empleado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>001</td>
+              <td>22/10/2025</td>
+              <td>Juan Alvarez Perez</td>
+              <td>$24.000</td>
+              <td>Pendiente</td>
+              <td>Pendiente</td>
+              <td>Ninguno</td>
+              <td><button class="btn-ver">Ver más</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      
+      <div class="acciones-pedidos">
+        <button class="btn-ingresar">Ingresar Pedido</button>
+        <button class="btn-tomar">Tomar Pedido</button>
+      </div>
+    </div>
+
+    <!-- Contenido: Historial -->
+     
+    <div class="contenido-tab" id="historial" style="display: none;">
+      <div class="controles-pedidos">
+        <input type="text" placeholder="" />
+        <button class="btn-buscar">Buscar</button>
+
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+        <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+         </div>
+      </div>
+
+      <div class="tabla-pedidos">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Estado</th>
+              <th>Empleado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>002</td>
+              <td>21/10/2025</td>
+              <td>Maria Gómez</td>
+              <td>$18.500</td>
+              <td>Pagado</td>
+              <td>Completado</td>
+              <td>Laura Ruiz</td>
+              <td><button class="btn-ver">Ver más</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="acciones-pedidos">
+        <button class="btn-ingresar">Ingresar Pedido</button>
+        <button class="btn-tomar">Tomar Pedido</button>
+      </div>
+    </div>
+
+    <!-- Contenido: Tomados -->
+    <div class="contenido-tab" id="tomados" style="display: none;">
+      <div class="controles-pedidos">
+        <input type="text" placeholder="" />
+        <button class="btn-buscar">Buscar</button>
+
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+        <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+         </div>
+      </div>
+
+      <div class="tabla-pedidos">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Pago</th>
+              <th>Estado</th>
+              <th>Empleado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>003</td>
+              <td>20/10/2025</td>
+              <td>Carlos Mejía</td>
+              <td>$32.000</td>
+              <td>Pagado</td>
+              <td>Tomado</td>
+              <td>Andrés López</td>
+              <td><button class="btn-ver">Ver más</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="acciones-pedidos">
+        <button class="btn-ingresar">Ingresar Pedido</button>
+        <button class="btn-tomar">Tomar Pedido</button>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contenidos = document.querySelectorAll('.contenido-tab');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Activar pestaña visual
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Mostrar contenido correspondiente
+      const targetId = tab.getAttribute('data-tab');
+      contenidos.forEach(c => {
+        c.style.display = c.id === targetId ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+  <script>
+  // Detecta la página actual 
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<!-- Formulario emergente -->
+<section id="formulario-pedido" class="formulario-pedido" style="display: none;">
+
+  <form class="formulario-detalle" onsubmit="mostrarMensajeFactura(); return false;">
+    <!-- Fecha y N° Pedido -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Fecha:</label>
+        <input type="text" id="fecha-ingreso" readonly />
+      </div>
+      <div class="grupo-campos">
+        <label>N° Pedido:</label>
+        <input type="text" id="codigo-ingreso" readonly />
+      </div>
+    </div>
+
+    <!-- Cliente -->
+    <div class="grupo-campos">
+      <label>Cliente:</label>
+      <div class="cliente-registro">
+        <input type="text" />
+        <button type="button" class="btn-registrar-cliente">Registrar cliente</button>
+      </div>
+    </div>
+
+    <!-- Teléfono y Dirección -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Teléfono:</label>
+        <input type="text" />
+      </div>
+      <div class="grupo-campos">
+        <label>Dirección:</label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="grupo-campos">
+      <label>Email:</label>
+      <input type="email" />
+    </div>
+
+    <!-- Tabla de productos -->
+    <div class="tabla-productos">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Producto</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Total -->
+    <div class="grupo-campos">
+      <label>Total:</label>
+      <input type="text" />
+    </div>
+
+    <!-- Empleado y Documento Empleado -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Empleado:</label>
+        <select id="empleado-select">
+          <option value="">Seleccione empleado</option>
+          <option value="E-01">Andrés López</option>
+          <option value="E-02">Laura Ruiz</option>
+          <option value="E-03">Carlos Mejía</option>
+        </select>
+      </div>
+      <div class="grupo-campos">
+        <label>Documento Empleado:</label>
+        <input type="text" id="documento-empleado" readonly />
+      </div>
+    </div>
+
+    <!-- Botones -->
+     <div class="acciones-pedido">
+      <button type="submit" class="btn-confirmar">Tomar Pedido</button>
+      <button type="button" class="btn-cancelar" onclick="cerrarFormulario()">Cancelar</button>
+    </div>
+  </form>
+</section>
+
+<!--formulario de ingreso de pedido-->
+<section id="formulario-ingresar" class="formulario-ingresar" style="display: none;">
+  <form class="formulario-detalle2" onsubmit="mostrarMensajeFactura(); return false;">
+    
+    <!-- Fecha y N° Pedido -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Fecha:</label>
+        <input type="text" id="fecha-ingreso" readonly />
+      </div>
+      <div class="grupo-campos">
+        <label>N° Pedido:</label>
+        <input type="text" id="codigo-ingreso" readonly />
+      </div>
+    </div>
+
+    <!-- Tabla de productos agregados -->
+    <div class="tabla-productos">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Producto</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Bloque para agregar producto -->
+    <div class="grupo-campos">
+      <label>Producto:</label>
+      <div class="fila-producto">
+        <select id="producto-select">
+          <option value="">Seleccione producto</option>
+          <option value="P-01">Producto A</option>
+          <option value="P-02">Producto B</option>
+          <option value="P-03">Producto C</option>
+        </select>
+        <button type="button" class="btn-chulo" id="agregar-producto">
+          <img src="imagenes/chulo.png" alt="Confirmar" class="icono-chulo" />
+        </button>
+      </div>
+
+      <!-- Precio y Cantidad debajo -->
+      <div class="fila-doble">
+        <div class="grupo-campos">
+          <label>Precio:</label>
+          <input type="number" id="precio-input" />
+        </div>
+        <div class="grupo-campos">
+          <label>Cantidad:</label>
+          <input type="number" id="cantidad-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Cliente -->
+    <div class="grupo-campos">
+      <label>Cliente:</label>
+      <div class="cliente-registro">
+        <select>
+          <option value="">Seleccione cliente</option>
+          <option value="C-01">Juan Álvarez</option>
+          <option value="C-02">María Gómez</option>
+          <option value="C-03">Carlos Mejía</option>
+        </select>
+        <button type="button" class="btn-registrar-cliente">Registrar cliente</button>
+      </div>
+    </div>
+
+    <!-- Teléfono y Dirección -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Teléfono:</label>
+        <input type="text" />
+      </div>
+      <div class="grupo-campos">
+        <label>Dirección:</label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="grupo-campos">
+      <label>Email:</label>
+      <input type="email" />
+    </div>
+
+    <!-- Empleado y Documento Empleado -->
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Empleado:</label>
+        <select id="empleado-ingreso">
+          <option value="">Seleccione empleado</option>
+          <option value="E-01">Andrés López</option>
+          <option value="E-02">Laura Ruiz</option>
+          <option value="E-03">Carlos Mejía</option>
+        </select>
+      </div>
+      <div class="grupo-campos">
+        <label>Documento Empleado:</label>
+        <input type="text" id="documento-ingreso" readonly />
+      </div>
+    </div>
+
+    <!-- Botones -->
+     <div class="acciones-pedido2">
+      <button type="submit" class="btn-crear">Crear Pedido</button>
+      <button type="button" class="btn-cancelar" onclick="cerrarFormularioIngreso()">Cancelar</button>
+    </div>
+  </form>
+</section>
+
+<!--formulario para registrar cliente-->
+<section id="formulario-cliente" class="formulario-cliente" style="display: none;">
+  <form class="formulario-detalle" onsubmit="agregarCliente(); return false;">
+    <h3>Registrar Cliente</h3>
+
+  
+    <div class="grupo-campos">
+      <label>Código:</label>
+      <input type="text" id="codigo-cliente" readonly />
+    </div>
+
+ 
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Nombre:</label>
+        <input type="text" id="nombre-cliente" />
+      </div>
+      <div class="grupo-campos">
+        <label>Apellido:</label>
+        <input type="text" id="apellido-cliente" />
+      </div>
+    </div>
+
+   
+    <div class="fila-doble">
+      <div class="grupo-campos">
+        <label>Teléfono:</label>
+        <input type="text" id="telefono-cliente" />
+      </div>
+      <div class="grupo-campos">
+        <label>Dirección:</label>
+        <input type="text" id="direccion-cliente" />
+      </div>
+    </div>
+
+ 
+    <div class="grupo-campos email-ajuste">
+      <label>Email:</label>
+      <input type="email" id="email-cliente" />
+    </div>
+   
+   
+   <div class="botones-cliente">
+      <button type="submit" class="btn-agregar-cliente">Agregar</button>
+      <button type="button" class="btn-cancelar-cliente" onclick="cerrarFormularioCliente()">Cancelar</button>
+    </div>
+  </form>
+</section>
+
+<script>
+  let numeroPedido = 1; // 🔹 Controla el número del pedido
+
+  const btnsVerMas = document.querySelectorAll('.btn-ver');
+  const btnsTomar = document.querySelectorAll('.btn-tomar');
+  const btnsIngresar = document.querySelectorAll('.btn-ingresar'); 
+  const formulario = document.getElementById('formulario-pedido');
+  const formularioIngresar = document.getElementById('formulario-ingresar'); 
+  const filas = document.querySelectorAll('.tabla-pedidos tbody tr');
+
+  // Mostrar formulario al hacer clic en "Ver más"
+  btnsVerMas.forEach(btn => {
+    btn.addEventListener('click', () => {
+      formulario.style.display = 'block';
+      window.scrollTo({ top: formulario.offsetTop, behavior: 'smooth' });
+
+      const hoy = new Date();
+      document.querySelector('#formulario-pedido #fecha-ingreso').value = hoy.toLocaleDateString('es-CO');
+      document.querySelector('#formulario-pedido #codigo-ingreso').value = `PED-${numeroPedido.toString().padStart(4, '0')}`;
+    });
+  });
+
+  // Selección de fila
+  filas.forEach(fila => {
+    fila.addEventListener('click', (e) => {
+      filas.forEach(f => f.classList.remove('fila-seleccionada'));
+      fila.classList.add('fila-seleccionada');
+      e.stopPropagation();
+    });
+  });
+
+  // Deseleccionar al hacer clic fuera de la tabla
+  document.addEventListener('click', (e) => {
+    const tabla = document.querySelector('.tabla-pedidos');
+    if (tabla && !tabla.contains(e.target)) {
+      filas.forEach(f => f.classList.remove('fila-seleccionada'));
+    }
+  });
+
+  // Mostrar formulario solo si hay fila seleccionada al hacer clic en "Tomar Pedido"
+  btnsTomar.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const seleccionada = document.querySelector('.fila-seleccionada');
+      if (seleccionada) {
+        formulario.style.display = 'block';
+        window.scrollTo({ top: formulario.offsetTop, behavior: 'smooth' });
+
+        const hoy = new Date();
+        document.querySelector('#formulario-pedido #fecha-ingreso').value = hoy.toLocaleDateString('es-CO');
+        document.querySelector('#formulario-pedido #codigo-ingreso').value = `PED-${numeroPedido.toString().padStart(4, '0')}`;
+      } else {
+        alert('Por favor selecciona un pedido antes de tomarlo.');
+      }
+    });
+  });
+
+  // Mostrar formulario de ingresar pedido al hacer clic en "Ingresar Pedido"
+  btnsIngresar.forEach(btn => {
+    btn.addEventListener('click', () => {
+      formularioIngresar.style.display = 'block';
+      window.scrollTo({ top: formularioIngresar.offsetTop, behavior: 'smooth' });
+
+      const hoy = new Date();
+      document.querySelector('#formulario-ingresar #fecha-ingreso').value = hoy.toLocaleDateString('es-CO');
+      document.querySelector('#formulario-ingresar #codigo-ingreso').value = `PED-${numeroPedido.toString().padStart(4, '0')}`;
+    });
+  });
+
+  // Cancelar formularios
+  function cerrarFormulario() {
+    formulario.style.display = 'none';
+  }
+
+  function cerrarFormularioIngreso() {
+    formularioIngresar.style.display = 'none';
+  }
+
+  // Documento según empleado en formulario ingresar
+  const empleadoIngreso = document.getElementById('empleado-ingreso');
+  const documentoIngreso = document.getElementById('documento-ingreso');
+  if (empleadoIngreso) {
+    empleadoIngreso.addEventListener('change', () => {
+      const documentos = {
+        'E-01': '1001234567',
+        'E-02': '1002345678',
+        'E-03': '1003456789'
+      };
+      documentoIngreso.value = documentos[empleadoIngreso.value] || '';
+    });
+  }
+
+  // 🔹 Mostrar mensaje factura y SOLO ahí cambiar número de pedido
+  function mostrarMensajeFactura() {
+    const mensaje = document.getElementById('mensaje-factura');
+    mensaje.style.display = 'flex';
+
+    setTimeout(() => {
+      mensaje.style.display = 'none';
+
+      //  Solo cambiar número de pedido cuando se genera la factura
+      numeroPedido++;
+      const nuevoCodigo = `PED-${numeroPedido.toString().padStart(4, '0')}`;
+      document.querySelector('#formulario-ingresar #codigo-ingreso').value = nuevoCodigo;
+
+    }, 2000);
+  }
+
+  function cerrarMensajeFactura() {
+    document.getElementById('mensaje-factura').style.display = 'none';
+  }
+
+  // Registrar cliente
+  const btnsRegistrarCliente = document.querySelectorAll('.btn-registrar-cliente');
+  const formularioCliente = document.getElementById('formulario-cliente');
+
+  btnsRegistrarCliente.forEach(btn => {
+    btn.addEventListener('click', () => {
+      formularioCliente.style.display = 'block';
+
+      const codigo = 'CLI-' + Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+      document.getElementById('codigo-cliente').value = codigo;
+    });
+  });
+
+  function cerrarFormularioCliente() {
+    formularioCliente.style.display = 'none';
+  }
+
+  function agregarCliente() {
+    const nombre = document.getElementById('nombre-cliente').value.trim();
+    const apellido = document.getElementById('apellido-cliente').value.trim();
+    const texto = document.getElementById('texto-cliente');
+    const mensaje = document.getElementById('mensaje-cliente');
+
+    texto.textContent = `Cliente ${nombre} ${apellido} registrado correctamente`;
+    mensaje.style.display = 'flex';
+
+    setTimeout(() => {
+      mensaje.style.display = 'none';
+    }, 2000);
+
+    cerrarFormularioCliente();
+  }
+</script>
+
+<div id="mensaje-factura" class="mensaje-factura" style="display: none;">
+  <div class="contenido-mensaje">
+    <img src="imagenes/factura2.png" alt="Factura generada" class="icono-factura" />
+    <span class="texto-factura">Se generó factura</span>
+  </div>
+</div>
+<div id="mensaje-cliente" class="mensaje-cliente" style="display: none;">
+  <div class="contenido-mensaje">
+    <img src="imagenes/verificado.png" alt="Cliente agregado" class="icono-verificado" />
+    <span class="texto-cliente" id="texto-cliente">Cliente registrado correctamente</span>
+  </div>
+</div>
+</body>
+</html>

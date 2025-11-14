@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reporte</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="contenido-reporte">
+  <!-- Pestañas -->
+  <div class="tabs-reportes">
+    <button class="tab-btn active" data-tab="ventas">Ventas</button>
+    <button class="tab-btn tab-pendientes" data-tab="pendientes">Reportes pendientes</button>
+  </div>
+
+  <!-- Panel gris -->
+  <section class="panel-reportes">
+    <!-- Tab: Ventas -->
+    <div class="contenido-tab" id="ventas">
+      <div class="controles-reportes">
+        <input type="text" placeholder="Buscar reporte..." />
+        <button class="btn-buscar">Buscar</button>
+
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+        <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+        </div>
+
+        <!-- Exportar junto a la tabla -->
+        <button class="btn-exportar">
+           <img src="imagenes/exportar.png" alt="Exportar" class="icono-exportar">
+           Exportar
+        </button>
+      </div>
+
+      <!-- Tabla -->
+      <div class="tabla-reportes">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Reporte</th>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R01</td>
+              <td>001</td>
+              <td>22/10/2025</td>
+              <td>Juan Alvarez Perez</td>
+              <td>$24.000</td>
+              <td>Pendiente</td>
+              <td>
+                <button class="btn-ver" onclick="abrirFormularioReporte()">Ver más</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Único botón Eliminar a la derecha -->
+      <div class="acciones-reportes">
+        <button class="btn-eliminar-rojo" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+      </div>
+    </div>
+
+    <!-- Tab: Reportes pendientes -->
+    <div class="contenido-tab" id="pendientes" style="display: none;">
+      <div class="controles-reportes">
+        <input type="text" placeholder="Buscar reporte pendiente..." />
+        <button class="btn-buscar">Buscar</button>
+
+        <select class="select-estado">
+          <option value="">Estado</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="pagado">Pagado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+        <div class="select-filtro-container">
+          <img src="imagenes/filtro.png" alt="Filtrar" class="icono-filtro">
+          <select class="select-estado">
+            <option value="">Filtrar</option>
+            <option value="hoy">Hoy</option>
+            <option value="semana">Esta semana</option>
+            <option value="mes">Este mes</option>
+          </select>
+        </div>
+
+        <!-- Exportar junto a la tabla -->
+       <button class="btn-exportar">
+           <img src="imagenes/exportar.png" alt="Exportar" class="icono-exportar">
+           Exportar
+        </button>
+      </div>
+
+      <div class="tabla-reportes">
+        <table>
+          <thead>
+            <tr>
+              <th>N° Reporte</th>
+              <th>N° Pedido</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R02</td>
+              <td>002</td>
+              <td>21/10/2025</td>
+              <td>Maria Gómez</td>
+              <td>$18.500</td>
+              <td>Pendiente</td>
+              <td>
+                <button class="btn-ver" onclick="abrirFormularioReporte()">Ver más</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      
+      <div class="acciones-reportes">
+        <button class="btn-eliminar-rojo" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- formulario de reporte -->
+<div id="formulario-reporte" class="formulario-reporte" style="display: none;">
+  <div id="contenido-reporte" class="formulario-detalle">
+    
+    <!-- Fecha -->
+    <div class="fila-campo">
+      <label>Fecha:</label>
+      <input type="text" value="13/11/2025" />
+    </div>
+
+    <!-- Nº Reporte y Nº Pedido en la misma fila -->
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>N° Reporte:</label>
+        <input type="text" value="R001" />
+      </div>
+      <div class="fila-campo">
+        <label>N° Pedido:</label>
+        <input type="text" value="P001" />
+      </div>
+    </div>
+
+    <!-- Cliente -->
+    <div class="fila-campo">
+      <label>Cliente:</label>
+      <input type="text" value="Juan Pérez" />
+    </div>
+
+    <!-- Teléfono y Dirección -->
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>Teléfono:</label>
+        <input type="text" />
+      </div>
+      <div class="fila-campo">
+        <label>Dirección:</label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <!-- Tabla de productos -->
+    <div class="tabla-productos">
+      <table>
+        <thead>
+          <tr>
+            <th>N° Producto</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Producto A</td>
+            <td>2</td>
+            <td>$12.000</td>
+            <td>$24.000</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Producto B</td>
+            <td>1</td>
+            <td>$15.000</td>
+            <td>$15.000</td>
+          </tr>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="linea-total" />
+
+    <!-- Estado y Total -->
+    <div class="fila-total">
+      <div class="fila-campo">
+        <label>Estado:</label>
+        <input type="text" value="Pendiente" />
+      </div>
+      <div class="fila-campo">
+        <label>Total:</label>
+        <input type="text" value="$39.000" />
+      </div>
+    </div>
+
+   
+    <div class="acciones-formulario">
+      <button class="btn-cancelar" onclick="cerrarFormulario()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+  <script>
+  // Detecta la página actual (por ejemplo: "home.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  // Pestañas para Reporte (Ventas y Reportes pendientes)
+document.addEventListener("DOMContentLoaded", function () {
+  const tabButtons = document.querySelectorAll(".tabs-reportes .tab-btn");
+  const tabContents = document.querySelectorAll(".contenido-tab");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const targetTab = this.getAttribute("data-tab");
+
+      // Desactivar todos los botones y ocultar tabs
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      tabContents.forEach((tab) => (tab.style.display = "none"));
+
+      // Activar el botón actual
+      this.classList.add("active");
+
+      // Mostrar contenido correspondiente
+      const targetContent = document.getElementById(targetTab);
+      if (targetContent) {
+        targetContent.style.display = "block";
+      }
+    });
+  });
+
+  // Mostrar por defecto la pestaña Ventas
+  const ventasTab = document.getElementById("ventas");
+  if (ventasTab) ventasTab.style.display = "block";
+});
+
+// Abrir formulario de reporte
+function abrirFormularioReporte() {
+  const formulario = document.getElementById("formulario-reporte");
+  if (formulario) {
+    formulario.style.display = "block";
+  }
+}
+
+// Cerrar formulario de reporte
+function cerrarFormulario() {
+  const formulario = document.getElementById("formulario-reporte");
+  if (formulario) {
+    formulario.style.display = "none";
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  //Selección de filas en cualquier tabla de Reportes
+  document.querySelectorAll('.tabla-reportes tbody tr').forEach(fila => {
+    fila.addEventListener('click', (e) => {
+      const tablaActual = fila.closest('.tabla-reportes');
+      tablaActual.querySelectorAll('tbody tr').forEach(f => f.classList.remove('fila-seleccionada'));
+      fila.classList.add('fila-seleccionada');
+      e.stopPropagation();
+    });
+  });
+
+  //Deseleccionar al hacer clic fuera de tabla y acciones
+  document.addEventListener('click', (e) => {
+    const esClicEnTabla = e.target.closest('.tabla-reportes');
+    const esClicEnAcciones = e.target.closest('.acciones-reportes');
+    if (!esClicEnTabla && !esClicEnAcciones) {
+      document.querySelectorAll('.tabla-reportes tbody tr')
+        .forEach(f => f.classList.remove('fila-seleccionada'));
+    }
+  });
+});
+
+</script>
+
+
+</body>
+</html>

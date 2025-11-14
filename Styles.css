@@ -1,0 +1,2510 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+body{
+
+ background-color: #F3F3F3;
+  font-family: "Inter";
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+   padding-top: 10px; 
+}
+
+.contenedor {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imalogo{
+   width: 400px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px; 
+}
+
+.formulario{
+     background-color: #d9d9d9;
+  padding: 40px 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  width: 400px;
+  box-sizing: border-box;
+  margin-top: -120px; 
+  
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #0B204C;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 0 3px rgba(11, 32, 76, 0.2);
+  outline: none;
+
+  position: relative;   
+  right: 10px;  
+}
+.ingresar {
+  display: block;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition:  0.3s;
+  text-decoration: none; 
+}
+
+/* Al pasar el mouse */
+.ingresar:hover {
+  background-color: #398d3c; 
+}
+
+/* Al hacer clic (pulsar) */
+.ingresar:active {
+  background-color: #398d3c; 
+}
+
+.recuperar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  justify-content: flex-start;
+  font-size: 12px;
+}
+
+.llave {
+  width: 30px;
+  height: auto;
+  margin: 0;
+}
+
+
+/*menu*/
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100vh;
+  background-color: #192A56;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-lateral nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+}
+
+.item-menu {
+  width: 100%;
+}
+
+.item-menu a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px; 
+  width: 100%;
+  padding: 6px 20px 6px 36px; 
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+}
+
+.item-menu a.active,
+.item-menu a:hover {
+  background-color: #2e5eb3;
+  border-radius: 0;
+}
+
+.item-menu img {
+  width: 48px; 
+  height: 48px;
+  object-fit: contain;
+}
+
+.item-menu span {
+  font-size: 16px; 
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/*inicio*/
+.contenido-trabajadores {
+  margin-top: 43px;
+  margin-left: 180px;
+  padding: 20px;
+}
+
+.panel-trabajadores {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-trabajadores {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.controles-trabajadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controles-trabajadores input[type="text"] {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tabla-trabajadores {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-trabajadores table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-trabajadores th,
+.tabla-trabajadores td {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-trabajadores thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.acciones-trabajadores {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.acciones-trabajadores .btn-editar,
+.acciones-trabajadores .btn-eliminar {
+  width: 180px;
+  padding: 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/*producto*/
+
+.contenido-productos {
+  margin-left: 180px;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Barra superior */
+.barra-superior {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 12px;
+}
+
+/* Grupo de botón + buscador */
+.acciones-producto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+/* Botón "Agregar" */
+.btn-agregar1 {
+ background-color: #2e5eb3;
+  color: white;
+  border: none;
+  padding: 12px 26px; 
+  font-size: 18px;   
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Buscador */
+.buscador {
+  width: 300px;       
+  padding: 8px 14px;  
+  font-size: 16px;    
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Contenedor del carrito */
+.carrito-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;       
+  z-index: 1000;
+  padding-left: 20px; 
+}
+
+/* Ícono del carrito */
+.icono-carrito {
+  position: absolute;
+  top: 0;
+  right: 0;              
+    
+  width: 40px;
+  height: 40px;
+  background-color: #1dbf73;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+/* Hover del carrito */
+.icono-carrito:hover {
+  background-color: #17a865;
+  transform: scale(1.05);
+}
+
+/* Grid de productos */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+}
+
+/* Tarjeta de producto */
+.producto {
+  position: relative;
+  max-width: 140px;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Imagen del producto */
+.cuadro-producto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+
+/* Botón "+" */
+.btn-seleccionar {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background-color: #a9a9aa;
+  color: white;
+  border: none;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carrito-panel {
+  display: none; 
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 260px;
+  background-color: #D9D9D9;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+
+.carrito-contenido h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #333;
+}
+
+#carrito-total {
+  font-size: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #333; 
+}
+
+.carrito-botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.btn-realizar {
+  background-color: #1dbf73;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-vaciar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.panel-acciones-global {
+  display: none;
+  position: fixed;
+  background-color: #D9D9D9;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-editar,
+.btn-eliminar {
+  width: 120px;
+  padding: 6px 0;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background-color: #1dbf73;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/*PEDIDO*/
+.contenido-pedidos {
+  margin-left: 180px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Encabezado superior con campana*/
+.header-top {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cuadro gris alrededor de la campana */
+.campana-container {
+  background-color: #ececee;
+  padding: 8px 18px; 
+  border-radius: 8px;
+  border: 2px solid #192A56; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.campana-icono {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+/* Pestañas (fuera del panel gris) */
+.tabs-pedidos {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab-btn.active {
+  background-color: #2e5eb3;
+  color: white;
+}
+
+
+
+.tab-btn[data-tab="historial"].active {
+  background-color: #787879;
+  color: white;
+}
+
+/* Pestaña activa verde para "Pedidos tomados" */
+.tab-btn[data-tab="tomados"].active {
+  background-color: #4CAF50;
+  color: white;
+}
+.tab-btn.icono-historial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.icono-relog {
+  width: 22px;
+  height: 22px;
+  margin-right: 4px; 
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* Panel gris claro que envuelve filtros, tabla y botones */
+.panel-pedidos {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: -20px; 
+  position: relative;
+  z-index: 1;
+}
+
+/* Controles de búsqueda y filtros */
+.controles-pedidos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controles-pedidos input[type="text"] {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-estado {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+/* Select con ícono de filtro */
+.select-filtro-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-filtro-container .icono-filtro {
+  position: absolute;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.select-filtro-container select {
+  padding-left: 36px;
+  padding-right: 10px;
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  appearance: none;
+}
+
+/* Botón Buscar */
+.btn-buscar {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e5eb3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Tabla sin líneas verticales */
+.tabla-pedidos {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-pedidos table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-pedidos th,
+.tabla-pedidos td {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-pedidos thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botón Ver más */
+.btn-ver {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botones centrados al final */
+.acciones-pedidos {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn-ingresar,
+.btn-tomar {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-ingresar {
+  background-color: #2e5eb3;
+  color: white;
+}
+
+.btn-tomar {
+  background-color: #4CAF50;
+  color: white;}
+
+
+  /*formulario emergente*/
+ .formulario-pedido, .formulario-ingresar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 400px; 
+  max-width: 80%; 
+  background-color: #FAF5F5;
+  border: 3px solid #192A56;
+  border-radius: 8px;
+  padding: 12px; 
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.formulario-detalle,.formulario-detalle2 {
+  
+  flex-direction: column;
+  gap: 12px; 
+}
+
+/* Campos */
+.grupo-campos {
+  
+  flex-direction: column;
+  gap: 8px; 
+}
+
+.grupo-campos label {
+  font-weight: bold;
+  font-size: 13px; 
+  color: #333;
+}
+
+
+.grupo-campos input,
+.grupo-campos select {
+   padding: 4px 7px;       
+  font-size: 13px;        
+  max-width: 90%; 
+
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: rgb(231, 228, 228);
+  outline: none;
+}
+.formulario-ingresar .grupo-campos input[type="email"],.formulario-pedido .grupo-campos input[type="email"] {
+  margin-left: 10px;   /* ajusta el valor según lo que necesites */
+}
+
+.grupo-campos select:focus,
+.grupo-campos input:focus {
+  border-color: #4CAF50;
+}
+
+/* Tabla */
+.tabla-productos table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  border: none;
+  padding: 6px; 
+  text-align: left;
+  font-size: 13px;
+}
+
+/* Botones */
+.formulario-pedido .acciones-pedido,
+.formulario-ingresar .acciones-pedido2 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formulario-pedido .btn-confirmar,
+.formulario-ingresar .btn-crear {
+  height: 32px;
+  margin-top: 23px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-pedido .btn-confirmar:hover,
+.formulario-ingresar .btn-crear:hover {
+  background-color: #3f9442;
+ 
+}
+
+.formulario-pedido .btn-cancelar,
+.formulario-ingresar .btn-cancelar {
+  
+  padding: 7px 12px;
+  background-color: #C92222;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-pedido .btn-cancelar:hover,
+.formulario-ingresar .btn-cancelar:hover {
+  background-color: #801414;
+}
+
+.cliente-registro {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cliente-registro input {
+  flex: 1;
+}
+
+.btn-registrar-cliente {
+  padding: 5px 10px;
+  background-color: #2e5eb3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* Fila doble */
+.fila-doble {
+  display: flex;
+  gap: 16px;
+}
+
+.fila-doble .grupo-campos {
+  flex: 1;
+}
+
+/* Botón chulo */
+.fila-producto {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
+
+.btn-chulo {
+  background-color: #3f9442;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-chulo:hover {
+  background-color: #2e6f32;
+  transform: scale(1.05);
+}
+
+.icono-chulo {
+  width: 18px;
+  height: 18px;
+}
+
+#formulario-ingresar select#producto-select,
+#formulario-ingresar .cliente-registro select {
+  width: 100%;           
+  max-width: 360px;      
+  box-sizing: border-box; 
+}
+
+/*  Centrar bien el botón "Registrar cliente" */
+#formulario-ingresar .cliente-registro {
+  justify-content: flex-start;
+}
+
+
+/*  Apariencia interactiva para las filas */
+.tabla-pedidos tbody tr {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/*  Al pasar el mouse (opcional, puedes quitarlo si no lo quieres) */
+.tabla-pedidos tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Cuando una fila está seleccionada */
+.tabla-pedidos tbody tr.fila-seleccionada {
+  background-color: #B1C1E9; 
+}
+
+
+/*mensaje emergente*/
+.mensaje-factura {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: aparecer 0.2s ease-out;
+}
+
+.contenido-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icono-factura {
+  width: 64px;
+  height: 64px;
+}
+
+.texto-factura {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/*formulario cliente*/
+.formulario-cliente {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background-color: #fff;
+  border: 2px solid #192A56;
+  border-radius: 8px;
+  width: 360px;
+  padding: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+}
+
+.formulario-cliente h3 {
+  color: #192A56;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formulario-cliente .formulario-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-cliente .grupo-campos {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formulario-cliente .grupo-campos label {
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+.formulario-cliente .grupo-campos input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+.formulario-cliente .grupo-campos input:focus {
+  border-color: #4CAF50;
+  background-color: #eefbee;
+}
+
+.formulario-cliente .fila-doble {
+  display: flex;
+  gap: 10px;
+}
+
+/* Ajuste del campo Email hacia la derecha */
+.formulario-cliente .grupo-campos.email-ajuste {
+  margin-left: 8px;  /* Ajusta según tu preferencia (5px, 8px, 12px...) */
+}
+
+/* BOTONES */
+.botones-cliente {
+  display: flex;
+  justify-content: flex-end;  /* A la derecha */
+  gap: 8px;                   /* Espacio entre botones */
+  margin-top: 10px;
+}
+
+/* Estilo de los botones */
+.btn-agregar-cliente,
+.btn-cancelar-cliente {
+  padding: 6px 12px;  /* Botones más pequeños */
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Colores */
+.btn-agregar-cliente {
+  background-color: #308332;
+  color: white;
+}
+
+.btn-cancelar-cliente {
+  background-color: #C92222;
+  color: white;
+}
+
+.mensaje-cliente {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  background-color: #ffffff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: aparecer 0.3s ease-out;
+}
+
+.icono-verificado {
+  width: 48px;
+  height: 48px;
+}
+
+.texto-cliente {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
+/*FACTURA*/
+.contenido-facturas {
+  margin-left: 180px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.campana-container {
+  position: relative;
+  display: inline-block;
+  background-color: #ececee;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 2px solid #192A56;
+  z-index: 1003; 
+}
+
+
+.campana-icono {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1004; 
+}
+.tabs-facturas {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab-btn.active {
+  background-color: #2e5eb3;
+  color: white;
+}
+
+.tab-btn[data-tab="historial"].active {
+  background-color: #787879;
+  color: white;
+}
+
+.tab-btn[data-tab="pagadas"].active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tab-btn.icono-historial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.icono-relog {
+  width: 22px;
+  height: 22px;
+  margin-right: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.panel-facturas {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+}
+
+.controles-facturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controles-facturas input[type="text"] {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-estado {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.select-filtro-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-filtro-container .icono-filtro {
+  position: absolute;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.select-filtro-container select {
+  padding-left: 36px;
+  padding-right: 10px;
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  appearance: none;
+}
+
+.btn-buscar {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e5eb3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabla-facturas {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-facturas table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-facturas th,
+.tabla-facturas td {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-facturas thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-ver {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-enviar {
+  background-color: #2e5eb3;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.acciones-facturas {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn-editar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0
+}
+
+/*mensaje de enviado*/
+.mensaje-editado-factura,
+.mensaje-envio-factura {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: aparecer 0.3s ease-out;
+}
+
+.icono-verificado {
+  width: 48px;
+  height: 48px;
+}
+.texto-editado,
+.texto-envio {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/*Notificacion*/
+.campana-container {
+  position: relative;
+}
+
+.campana-icono {
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001; 
+}
+
+.notificacion-factura {
+  position: absolute;
+  top: 45px;           
+  right: 105%;        
+  background-color: #6f7179; 
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  width: 180px;        
+  height: 80px;        
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13.5px;
+  z-index: 1000;      
+  animation: aparecer-noti 0.25s ease-out;
+}
+
+.texto-notificacion {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.ver-mas {
+  font-size: 13px;
+  color: #d1d1d1;
+  text-decoration: none;
+}
+
+.ver-mas:hover {
+  text-decoration: underline;
+}
+
+@keyframes aparecer-noti {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FORMULARIO FACTURA */
+.formulario-factura {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 500px;
+  height: 460px; 
+  max-width: 90%;
+  background-color: #FAF5F5;
+  border: 3px solid #192A56; /* azul */
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+
+/* FORMULARIO EDITAR */
+.formulario-editar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 500px;
+  height: 460px; 
+  max-width: 90%;
+  background-color: #FAF5F5;
+  border: 3px solid #228B22; /* verde */
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+
+/* Ocultar botones en PDF */
+@media print {
+  .acciones-formulario {
+    display: none !important;
+  }
+}
+
+/* Contenedor interno */
+.formulario-detalle {
+  
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 0; 
+}
+
+/* Campos alineados horizontalmente */
+.fila-campo {
+  
+  align-items: center;
+  gap: -2px;
+  margin-bottom: 4px;
+}
+
+.fila-campo label {
+  width: 75px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Inputs y selects en ambos formularios */
+.formulario-factura input[type="text"],
+.formulario-factura input[type="date"],
+.formulario-factura select,
+.formulario-editar input[type="text"],
+.formulario-editar input[type="date"],
+.formulario-editar select {
+  
+  padding: 4px 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: rgb(231, 228, 228);
+  outline: none;
+  max-width: 160px; 
+}
+
+.formulario-factura input:focus,
+.formulario-factura select:focus,
+.formulario-editar input:focus,
+.formulario-editar select:focus {
+  border-color: #4CAF50;
+}
+
+/* Fila doble */
+.fila-doble {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px; 
+}
+
+
+
+/* Fila total */
+.fila-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 0; 
+}
+
+
+
+/* Tabla */
+.tabla-productos {
+  margin-bottom: 0; 
+}
+
+.tabla-productos table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  border: none;
+  padding: 6px;
+  text-align: left;
+  font-size: 13px;
+}
+
+/* Línea separadora */
+.linea-total {
+  border: none;
+  border-top: 1px solid #080707;
+  margin: 4px 0; 
+}
+
+.formulario-factura .acciones-factura,
+.formulario-editar .acciones-factura2 {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formulario-factura .btn-descargar, .formulario-editar .btn-editar2{
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 13px;
+
+}
+/* Botón descargar (azul) */
+.formulario-factura .btn-descargar {
+  height: 32px;
+  margin-top: 23px;
+  background-color: #192A56;
+}
+.formulario-factura .btn-descargar:hover {
+  background-color: #2a4791;
+}
+
+/* Botón editar (verde) */
+.formulario-editar .btn-editar2 {
+  height: -50px;
+  
+  margin-top: 23px;
+  background-color: #228B22;
+ 
+}
+.formulario-editar .btn-editar2:hover {
+  background-color: #2e8b57;
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+  padding: 7px 12px;
+  background-color: #C92222;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+.btn-cancelar:hover {
+  background-color: #801414;
+}
+
+/*eliminar*/
+/* Filas normales */
+.tabla-facturas tbody tr {
+  cursor: pointer;
+}
+
+/* Hover */
+.tabla-facturas tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Seleccionada */
+.tabla-facturas tbody tr.fila-seleccionada {
+  background-color: #B1C1E9;
+  color: #222;
+}
+
+/* Modal confirmación */
+.mensaje-confirmar-eliminar {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FAF5F5;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+  z-index: 1000;
+}
+
+.contenido-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icono-advertencia {
+  width: 40px;
+  height: 40px;
+}
+
+.acciones-mensaje {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-eliminar-confirmar {
+  padding: 8px 20px;
+  background-color: #C92222;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-eliminar-confirmar:hover {
+  background-color: #801414;
+}
+
+.btn-cancelar {
+  padding: 8px 20px;
+  background-color: #777;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: #555;
+}
+
+/* Mensaje éxito */
+.mensaje-editado-factura {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1002;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12;
+}
+
+/*REPORTE*/
+.contenido-reporte {
+  margin-left: 180px;
+  margin-top: 204px; /* todo más abajo */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* ENCABEZADO SUPERIOR */
+.header-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.ver-mas {
+  font-size: 13px;
+  color: #2e5eb3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* PESTAÑAS */
+.tabs-reportes {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab-btn.active {
+  background-color: #2e5eb3;
+  color: white;
+}
+
+/* Pestaña roja cuando está activa "Reportes pendientes" */
+.tab-btn.tab-pendientes.active {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* PANEL PRINCIPAL */
+.panel-reportes {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* CONTROLES (buscar, filtros, exportar) */
+.controles-reportes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controles-reportes input[type="text"] {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-estado {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.select-filtro-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-filtro-container .icono-filtro {
+  position: absolute;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.select-filtro-container select {
+  padding-left: 36px;
+  padding-right: 10px;
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  appearance: none;
+}
+
+.btn-buscar {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e5eb3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* TABLA */
+.tabla-reportes {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-reportes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-reportes th,
+.tabla-reportes td {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-reportes thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* BOTONES */
+.btn-ver {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-exportar {
+  background-color: #ffffff;
+  color: rgb(44, 42, 42);
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icono-exportar {
+  width: 18px;
+  height: 18px;
+}
+
+
+
+.btn-eliminar-rojo {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ACCIONES: botón eliminar único a la derecha */
+.acciones-reportes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* FORMULARIO REPORTE */
+.formulario-reporte {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 490px;
+  height: 470px; 
+  max-width: 90%;
+  background-color: #FAF5F5;
+  border: 3px solid #192A56; /* azul */
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+
+/* Contenedor interno */
+.formulario-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  margin-bottom: 0; 
+}
+
+/* Campos */
+.fila-campo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.fila-campo label {
+  margin-top: 10px;
+  width: 90px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Inputs */
+.formulario-reporte input[type="text"],
+.formulario-reporte input[type="date"],
+.formulario-reporte select {
+  margin-top: 3px;
+  width: 120px;              /* ancho fijo más corto */
+  padding: 4px 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: rgb(231, 228, 228);
+  outline: none;
+}
+
+.formulario-reporte input:focus,
+.formulario-reporte select:focus {
+  border-color: #4CAF50;
+}
+
+/* Fila doble */
+.fila-doble {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px; 
+}
+
+.fila-doble .fila-campo {
+  flex: 1;
+}
+
+/* Fila total */
+.fila-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 0; 
+}
+
+.fila-total .fila-campo {
+  flex: 1;
+}
+
+/* Tabla dentro del formulario */
+.tabla-productos {
+  margin-bottom: 0; 
+}
+
+.tabla-productos table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  border: none;
+  padding: 6px;
+  text-align: left;
+  font-size: 13px;
+}
+
+/* Línea separadora */
+.linea-total {
+  border: none;
+  border-top: 1px solid #080707;
+  margin: 4px 0; 
+}
+
+.acciones-formulario {
+  display: flex;
+  justify-content: flex-end; /* A la derecha */
+  margin-top: 20px;
+}
+
+.btn-cancelar {
+ 
+  margin-top: 25px;
+  padding: 7px 12px;
+  background-color: #C92222; /* rojo base */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  font-size: 13px;
+  transition: background-color 0.3s ease; /* duración y suavizado */
+}
+
+.btn-cancelar:hover {
+  background-color: #8b1616; /* rojo oscuro al pasar el mouse */
+}
+
+
+/* Cursor tipo pointer en todas las filas */
+.tabla-reportes tbody tr {
+  cursor: pointer;
+}
+
+/* Hover visual */
+.tabla-reportes tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Fila seleccionada */
+.tabla-reportes tbody tr.fila-seleccionada {
+  background-color: #B1C1E9;       /* azul claro */
+  color: #222;
+  
+  
+}
+
+@media print {
+  .acciones-formulario {
+    display: none !important;
+  }
+}
+
+
+/*Cliente*/
+.contenido-clientes {
+  margin-top: 43px;
+  margin-left: 180px;
+  padding: 20px;
+  
+}
+
+.panel-clientes {
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+.tabs-clientes {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  margin-top: 40px; 
+  position: relative;
+  z-index: 1;
+}
+
+.controles-clientes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.controles-clientes input[type="text"] {
+  width: 280px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.select-filtro-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select-filtro-container .icono-filtro {
+  position: absolute;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.select-filtro-container select {
+  padding-left: 36px;
+  padding-right: 10px;
+  height: 34px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  appearance: none;
+}
+
+.btn-buscar {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e5eb3;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabla-clientes {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.tabla-clientes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-clientes th,
+.tabla-clientes td {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-clientes thead th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-ver {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.acciones-clientes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.btn-editar,.btn-eliminar{
+  width: 150px;
+   padding: 7px ;
+   font-size: 14px;
+   font-weight: bold;
+} 
+.btn-editar {
+  background-color: #4CAF50;
+  color: white;
+ 
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+  
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.tab-btn.icono-cliente {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icono-usuario {
+  width: 22px;
+  height: 22px;
+}
+
+.formulario-cliente2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background-color: #fff;
+  border: 2px solid #192A56;
+  border-radius: 8px;
+  width: 376px;
+  padding: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  z-index: 1001;
+}
+
+.formulario-cliente2 h3 {
+  color: #192A56;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formulario-cliente2 .formulario-detalle2 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formulario-cliente2 .grupo-campos2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formulario-cliente2 .grupo-campos2 label {
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+.formulario-cliente2 .grupo-campos2 input {
+  width: 100%;
+  padding: 5px 6px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 12px;
+}
+
+.formulario-cliente2 .grupo-campos2 input:focus {
+  border-color: #4CAF50;
+  background-color: #eefbee;
+}
+
+.formulario-cliente2 .fila-doble2 {
+  
+  gap: 10px;
+}
+
+
+
+/* BOTONES CLIENTE2 */
+.botones-cliente2 {
+  display: flex;
+  justify-content: flex-end; /* A la derecha */
+  gap: 8px;                  /* Espacio entre botones */
+  margin-top: 10px;
+}
+
+/* ESTILO DE LOS BOTONES */
+.btn-agregar-cliente2,
+.btn-cancelar-cliente2 {
+  padding: 6px 12px;  /* Botones más pequeños */
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* COLORES */
+.btn-agregar-cliente2 {
+  background-color: #308332;
+  color: white;
+}
+
+.btn-cancelar-cliente2 {
+  background-color: #C92222;
+  color: white;
+}
+
+.tabla-clientes tbody tr {
+  cursor: pointer;
+}
+
+/* Hover visual */
+.tabla-clientes tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Fila seleccionada */
+.tabla-clientes tbody tr.fila-seleccionada {
+  background-color: #B1C1E9;
+  color: #222;
+}
+
+/*SOPORTE*/
+.contenido-soporte {
+    margin-left: 120px; 
+    padding: 40px;
+    display: flex;
+    gap: 50px; 
+}
+
+/*  CUADROS GRANDES  */
+.card-soporte {
+    width: 420px;        
+    height: 300px;      
+    background-color: #C7C7C7;
+    
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;           
+    padding-left: 25px;
+    font-size: 28px;    
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card-soporte:hover {
+    background-color: #B5B5B5;
+}
+
+/* Iconos */
+.icono-soporte {
+    width: 95px; 
+    height: 95px;
+}
+
+
+.chat-circulo {
+    width: 65px;
+    height: 65px;
+    background-color: #39A93E;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+.chat-circulo:hover {
+    background-color: #2F8A33;
+}
+
+.chat-circulo img {
+    width: 45px;
+    height: 45px;
+}
+
+.chat-box {
+  
+    width: 330px;
+    height: 380px;
+    background: #f4f4f4;
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    display: none;
+    overflow: hidden;
+    font-family: Arial;
+}
+
+/* Encabezado verde */
+.chat-header {
+    background: #39A93E;
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.cerrar-chat {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+/* Cuerpo */
+.chat-body {
+    padding: 15px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.mensaje-otros {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+    
+}
+
+.mensaje-otros p {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.mensaje-propio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.mensaje-propio p {
+    background: #dcfadc;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+
+/* avatar del otro */
+.mensaje-otros .avatar {
+   width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    order: 0;
+}
+
+/* avatar del propio */
+.mensaje-propio .avatar {
+  width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    order: 2;
+    margin-left: 10px;
+}
+
+/* caja inferior */
+.chat-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    border-top: 2px solid #ccc;
+}
+
+/* Contenedor que guarda */
+.input-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tamaño de los iconos del input */
+.icono-input {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.icono-input:hover {
+    opacity: 1;
+}
+
+/* Input para escribir */
+.chat-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #e5e5e5;
+}
+
+/* Contenedor de iconos */
+.input-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tamaño de los iconos */
+.icono-input {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* Input con mismo tamaño de antes */
+.chat-input input {
+    flex: 1;
+    margin: 0 -3px;  
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+
+.chat-input button {
+    padding: 8px 12px;
+    background: #39A93E;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.chat-input button:hover{
+
+  background-color: #2F8A33;
+}

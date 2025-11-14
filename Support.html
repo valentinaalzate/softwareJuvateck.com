@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte</title>
+    <link rel="stylesheet" href="./Styles.css">
+</head>
+<body>
+    <header>
+    <div class="menu-lateral">
+      <nav>
+        <div class="item-menu">
+          <a href="home.html">
+            <img src="imagenes/casa.png" alt="Inicio" />
+            <span>Inicio</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Product.html">
+            <img src="imagenes/bolsa-de-la-compra.png" alt="Producto" />
+            <span>Producto</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Order.html">
+            <img src="imagenes/pedido.png" alt="Pedido" />
+            <span>Pedido</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Invoice.html">
+            <img src="imagenes/factura.png" alt="Factura" />
+            <span>Factura</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Report.html">
+            <img src="imagenes/reporte.png" alt="Reporte" />
+            <span>Reporte</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Client.html">
+            <img src="imagenes/cliente.png" alt="Cliente" />
+            <span>Cliente</span>
+          </a>
+        </div>
+        <div class="item-menu">
+          <a href="Support.html">
+            <img src="imagenes/soporte.png" alt="Soporte" />
+            <span>Soporte</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+ <main class="contenido-soporte">
+
+    
+    <div class="card-soporte">
+        <img src="imagenes/manual.png" class="icono-soporte" alt="Manual">
+        <span>Manual de usuario</span>
+    </div>
+
+   
+    <div class="card-soporte">
+        <img src="imagenes/mensaje.png" class="icono-soporte" alt="Sugerencias Reclamos">
+        <span>Sugerencias / Reclamos</span>
+    </div>
+
+</main>
+
+
+<div class="chat-circulo">
+    <img src="imagenes/chat.png" alt="Chat Soporte">
+</div>
+
+<!-- Ventana de Chat Oculta -->
+<div id="chat-box" class="chat-box">
+    <div class="chat-header">
+        <span>Chat de ayuda</span>
+        <button id="cerrar-chat" class="cerrar-chat">✖</button>
+    </div>
+
+    <div class="chat-body">
+        <div class="mensaje-otros">
+            <img src="imagenes/usuario1.png" class="avatar">
+            <p>Hola, ¿en qué puedo ayudarte?</p>
+        </div>
+
+        <div class="mensaje-propio">
+            <img src="imagenes/usuario2.png" class="avatar">
+            <p>Escribe tu mensaje aquí...</p>
+        </div>
+    </div>
+
+    <div class="chat-input">
+    <div class="input-icons">
+        <img src="imagenes/emoji.png" class="icono-input">
+        <img src="imagenes/clip.png" class="icono-input">
+    </div>
+
+    <input type="text" placeholder="Escribe un mensaje...">
+    
+    <button>Enviar</button>
+</div>
+</div>
+
+  <script>
+  // Detecta la página actual (por ejemplo: "home.html")
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Busca todos los enlaces del menú
+  const menuLinks = document.querySelectorAll(".item-menu a");
+
+  menuLinks.forEach(link => {
+    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+   const chatBtn = document.querySelector(".chat-circulo");
+    const chatBox = document.getElementById("chat-box");
+    const cerrarChat = document.getElementById("cerrar-chat");
+
+    // Abre el chat al hacer clic en el botón circular
+    chatBtn.addEventListener("click", () => {
+        chatBox.style.display = "block";
+    });
+
+    // Cierra el chat
+    cerrarChat.addEventListener("click", () => {
+        chatBox.style.display = "none";
+    });
+</script>
+</body>
+</html>
