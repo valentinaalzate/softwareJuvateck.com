@@ -81,7 +81,7 @@
     </select>
   </div>
 
-  <!-- ROL (nuevo, mismo estilo) -->
+  <!-- ROL -->
   <div class="select-filtro-container">
     <select class="select-estado">
       <option value="">Rol</option>
@@ -129,14 +129,14 @@
   </section>
 </main>
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
+  // Detecta la página actual 
   const currentPage = window.location.pathname.split("/").pop();
 
   // Busca todos los enlaces del menú
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+   
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }

@@ -133,14 +133,14 @@
 </section>
 
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
+ 
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
+  
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
@@ -148,7 +148,7 @@
 </script>
 
 <script>
-  // Mostrar/ocultar panel del carrito
+  // muestra/oculta panel del carrito
   const carritoIcono = document.querySelector('.icono-carrito');
   const carritoPanel = document.getElementById('carrito-panel');
 
@@ -156,7 +156,7 @@
     carritoPanel.style.display = carritoPanel.style.display === 'none' ? 'block' : 'none';
   });
 
-  // Mostrar panel flotante de acciones al hacer clic en "+"
+  // muestra panel flotante de acciones al hacer clic en "+"
   const panelGlobal = document.getElementById('panel-acciones-global');
 
   document.querySelectorAll('.btn-seleccionar').forEach(boton => {

@@ -63,12 +63,12 @@ input[type="password"] {
   text-decoration: none; 
 }
 
-/* Al pasar el mouse */
+
 .ingresar:hover {
   background-color: #398d3c; 
 }
 
-/* Al hacer clic (pulsar) */
+
 .ingresar:active {
   background-color: #398d3c; 
 }
@@ -240,7 +240,6 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-/* Barra superior */
 .barra-superior {
   position: relative;
   display: flex;
@@ -269,7 +268,6 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Buscador */
 .buscador {
   width: 300px;       
   padding: 8px 14px;  
@@ -287,7 +285,6 @@ input[type="password"] {
   padding-left: 20px; 
 }
 
-/* Ícono del carrito */
 .icono-carrito {
   position: absolute;
   top: 0;
@@ -302,7 +299,6 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Hover del carrito */
 .icono-carrito:hover {
   background-color: #17a865;
   transform: scale(1.05);
@@ -469,7 +465,7 @@ input[type="password"] {
   height: 30px;
   cursor: pointer;
 }
-/* Pestañas (fuera del panel gris) */
+/* Pestañas  */
 .tabs-pedidos {
   display: flex;
   gap: 12px;
@@ -498,7 +494,7 @@ input[type="password"] {
   color: white;
 }
 
-/* Pestaña activa verde para "Pedidos tomados" */
+/* Pestaña activa para "Pedidos tomados" */
 .tab-btn[data-tab="tomados"].active {
   background-color: #4CAF50;
   color: white;
@@ -518,7 +514,7 @@ input[type="password"] {
   vertical-align: middle;
 }
 
-/* Panel gris claro que envuelve filtros, tabla y botones */
+/* Panel gris  */
 .panel-pedidos {
   background-color: #D9D9D9;
   border-radius: 8px;
@@ -553,7 +549,7 @@ input[type="password"] {
   font-size: 14px;
 }
 
-/* Select con ícono de filtro */
+
 .select-filtro-container {
   position: relative;
   display: flex;
@@ -590,7 +586,7 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Tabla sin líneas verticales */
+/* Tabla  */
 .tabla-pedidos {
   background-color: white;
   border-radius: 6px;
@@ -629,7 +625,7 @@ input[type="password"] {
   font-size: 14px;
 }
 
-/* Botones centrados al final */
+
 .acciones-pedidos {
   display: flex;
   justify-content: center;
@@ -847,19 +843,19 @@ input[type="password"] {
   box-sizing: border-box; 
 }
 
-/*  Centrar bien el botón "Registrar cliente" */
+
 #formulario-ingresar .cliente-registro {
   justify-content: flex-start;
 }
 
 
-/*  Apariencia interactiva para las filas */
+
 .tabla-pedidos tbody tr {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/*  Al pasar el mouse (opcional, puedes quitarlo si no lo quieres) */
+
 .tabla-pedidos tbody tr:hover {
   background-color: #f5f5f5;
 }
@@ -975,23 +971,23 @@ input[type="password"] {
   gap: 10px;
 }
 
-/* Ajuste del campo Email hacia la derecha */
+
 .formulario-cliente .grupo-campos.email-ajuste {
-  margin-left: 8px;  /* Ajusta según tu preferencia (5px, 8px, 12px...) */
+  margin-left: 8px;  
 }
 
 /* BOTONES */
 .botones-cliente {
   display: flex;
-  justify-content: flex-end;  /* A la derecha */
-  gap: 8px;                   /* Espacio entre botones */
+  justify-content: flex-end;  
+  gap: 8px;                   
   margin-top: 10px;
 }
 
-/* Estilo de los botones */
+
 .btn-agregar-cliente,
 .btn-cancelar-cliente {
-  padding: 6px 12px;  /* Botones más pequeños */
+  padding: 6px 12px;  
   font-size: 12px;
   font-weight: bold;
   border: none;
@@ -999,7 +995,6 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Colores */
 .btn-agregar-cliente {
   background-color: #308332;
   color: white;
@@ -1388,7 +1383,7 @@ input[type="password"] {
   height: 460px; 
   max-width: 90%;
   background-color: #FAF5F5;
-  border: 3px solid #228B22; /* verde */
+  border: 3px solid #228B22; 
   border-radius: 8px;
   padding: 14px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -1402,7 +1397,7 @@ input[type="password"] {
   }
 }
 
-/* Contenedor interno */
+
 .formulario-detalle {
   
   flex-direction: column;
@@ -1411,7 +1406,7 @@ input[type="password"] {
   margin-bottom: 0; 
 }
 
-/* Campos alineados horizontalmente */
+
 .fila-campo {
   
   align-items: center;
@@ -1426,7 +1421,7 @@ input[type="password"] {
   color: #333;
 }
 
-/* Inputs y selects en ambos formularios */
+
 .formulario-factura input[type="text"],
 .formulario-factura input[type="date"],
 .formulario-factura select,
@@ -1450,7 +1445,7 @@ input[type="password"] {
   border-color: #4CAF50;
 }
 
-/* Fila doble */
+
 .fila-doble {
   display: flex;
   justify-content: space-between;
@@ -1459,7 +1454,7 @@ input[type="password"] {
 
 
 
-/* Fila total */
+
 .fila-total {
   display: flex;
   justify-content: space-between;
@@ -1469,7 +1464,7 @@ input[type="password"] {
 
 
 
-/* Tabla */
+
 .tabla-productos {
   margin-bottom: 0; 
 }
@@ -1515,7 +1510,7 @@ input[type="password"] {
   font-size: 13px;
 
 }
-/* Botón descargar (azul) */
+
 .formulario-factura .btn-descargar {
   height: 32px;
   margin-top: 23px;
@@ -1525,7 +1520,6 @@ input[type="password"] {
   background-color: #2a4791;
 }
 
-/* Botón editar (verde) */
 .formulario-editar .btn-editar2 {
   height: -50px;
   
@@ -1537,7 +1531,6 @@ input[type="password"] {
   background-color: #2e8b57;
 }
 
-/* Botón cancelar */
 .btn-cancelar {
   padding: 7px 12px;
   background-color: #C92222;
@@ -1553,84 +1546,23 @@ input[type="password"] {
   background-color: #801414;
 }
 
-/*eliminar*/
-/* Filas normales */
+
 .tabla-facturas tbody tr {
   cursor: pointer;
 }
 
-/* Hover */
+
 .tabla-facturas tbody tr:hover {
   background-color: #f5f5f5;
 }
 
-/* Seleccionada */
+
 .tabla-facturas tbody tr.fila-seleccionada {
   background-color: #B1C1E9;
   color: #222;
 }
 
-/* Modal confirmación */
-.mensaje-confirmar-eliminar {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #FAF5F5;
-  border: 2px solid #333;
-  border-radius: 8px;
-  padding: 20px;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.25);
-  z-index: 1000;
-}
 
-.contenido-mensaje {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.icono-advertencia {
-  width: 40px;
-  height: 40px;
-}
-
-.acciones-mensaje {
-  display: flex;
-  gap: 12px;
-}
-
-.btn-eliminar-confirmar {
-  padding: 8px 20px;
-  background-color: #C92222;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.btn-eliminar-confirmar:hover {
-  background-color: #801414;
-}
-
-.btn-cancelar {
-  padding: 8px 20px;
-  background-color: #777;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-}
-
-.btn-cancelar:hover {
-  background-color: #555;
-}
 
 /* Mensaje éxito */
 .mensaje-editado-factura {
@@ -1654,7 +1586,7 @@ input[type="password"] {
 /*REPORTE*/
 .contenido-reporte {
   margin-left: 180px;
-  margin-top: 204px; /* todo más abajo */
+  margin-top: 204px; 
   padding: 20px;
   font-family: Arial, sans-serif;
 }
@@ -1698,7 +1630,7 @@ input[type="password"] {
   color: white;
 }
 
-/* Pestaña roja cuando está activa "Reportes pendientes" */
+/* Reportes pendientes */
 .tab-btn.tab-pendientes.active {
   background-color: #c0392b;
   color: white;
@@ -1845,7 +1777,7 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* ACCIONES: botón eliminar único a la derecha */
+/*  botón eliminar */
 .acciones-reportes {
   display: flex;
   justify-content: flex-end;
@@ -1864,7 +1796,7 @@ input[type="password"] {
   height: 470px; 
   max-width: 90%;
   background-color: #FAF5F5;
-  border: 3px solid #192A56; /* azul */
+  border: 3px solid #192A56; 
   border-radius: 8px;
   padding: 14px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
@@ -1896,12 +1828,12 @@ input[type="password"] {
   color: #333;
 }
 
-/* Inputs */
+
 .formulario-reporte input[type="text"],
 .formulario-reporte input[type="date"],
 .formulario-reporte select {
   margin-top: 3px;
-  width: 120px;              /* ancho fijo más corto */
+  width: 120px;              
   padding: 4px 6px;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -1915,7 +1847,6 @@ input[type="password"] {
   border-color: #4CAF50;
 }
 
-/* Fila doble */
 .fila-doble {
   display: flex;
   justify-content: space-between;
@@ -1926,7 +1857,6 @@ input[type="password"] {
   flex: 1;
 }
 
-/* Fila total */
 .fila-total {
   display: flex;
   justify-content: space-between;
@@ -1938,7 +1868,6 @@ input[type="password"] {
   flex: 1;
 }
 
-/* Tabla dentro del formulario */
 .tabla-productos {
   margin-bottom: 0; 
 }
@@ -1961,7 +1890,6 @@ input[type="password"] {
   font-size: 13px;
 }
 
-/* Línea separadora */
 .linea-total {
   border: none;
   border-top: 1px solid #080707;
@@ -1970,7 +1898,7 @@ input[type="password"] {
 
 .acciones-formulario {
   display: flex;
-  justify-content: flex-end; /* A la derecha */
+  justify-content: flex-end; 
   margin-top: 20px;
 }
 
@@ -1978,34 +1906,31 @@ input[type="password"] {
  
   margin-top: 25px;
   padding: 7px 12px;
-  background-color: #C92222; /* rojo base */
+  background-color: #C92222; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
   color: white;
   font-size: 13px;
-  transition: background-color 0.3s ease; /* duración y suavizado */
+  transition: background-color 0.3s ease; 
 }
 
 .btn-cancelar:hover {
-  background-color: #8b1616; /* rojo oscuro al pasar el mouse */
+  background-color: #8b1616; 
 }
 
 
-/* Cursor tipo pointer en todas las filas */
 .tabla-reportes tbody tr {
   cursor: pointer;
 }
 
-/* Hover visual */
 .tabla-reportes tbody tr:hover {
   background-color: #f5f5f5;
 }
 
-/* Fila seleccionada */
 .tabla-reportes tbody tr.fila-seleccionada {
-  background-color: #B1C1E9;       /* azul claro */
+  background-color: #B1C1E9;       
   color: #222;
   
   
@@ -2238,15 +2163,15 @@ input[type="password"] {
 /* BOTONES CLIENTE2 */
 .botones-cliente2 {
   display: flex;
-  justify-content: flex-end; /* A la derecha */
-  gap: 8px;                  /* Espacio entre botones */
+  justify-content: flex-end; 
+  gap: 8px;                  
   margin-top: 10px;
 }
 
 /* ESTILO DE LOS BOTONES */
 .btn-agregar-cliente2,
 .btn-cancelar-cliente2 {
-  padding: 6px 12px;  /* Botones más pequeños */
+  padding: 6px 12px;  
   font-size: 12px;
   font-weight: bold;
   border: none;
@@ -2254,7 +2179,7 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* COLORES */
+
 .btn-agregar-cliente2 {
   background-color: #308332;
   color: white;
@@ -2269,12 +2194,11 @@ input[type="password"] {
   cursor: pointer;
 }
 
-/* Hover visual */
+
 .tabla-clientes tbody tr:hover {
   background-color: #f5f5f5;
 }
 
-/* Fila seleccionada */
 .tabla-clientes tbody tr.fila-seleccionada {
   background-color: #B1C1E9;
   color: #222;
@@ -2288,7 +2212,7 @@ input[type="password"] {
     gap: 50px; 
 }
 
-/*  CUADROS GRANDES  */
+/* paneles */
 .card-soporte {
     width: 420px;        
     height: 300px;      
@@ -2415,7 +2339,7 @@ input[type="password"] {
 }
 
 
-/* avatar del otro */
+
 .mensaje-otros .avatar {
    width: 40px;
     height: 40px;
@@ -2423,7 +2347,7 @@ input[type="password"] {
     order: 0;
 }
 
-/* avatar del propio */
+
 .mensaje-propio .avatar {
   width: 35px;
     height: 35px;
@@ -2442,14 +2366,14 @@ input[type="password"] {
     border-top: 2px solid #ccc;
 }
 
-/* Contenedor que guarda */
+
 .input-icons {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/* Tamaño de los iconos del input */
+
 .icono-input {
     width: 22px;
     height: 22px;
@@ -2461,7 +2385,7 @@ input[type="password"] {
     opacity: 1;
 }
 
-/* Input para escribir */
+
 .chat-input {
     display: flex;
     align-items: center;
@@ -2470,21 +2394,18 @@ input[type="password"] {
     background: #e5e5e5;
 }
 
-/* Contenedor de iconos */
 .input-icons {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/* Tamaño de los iconos */
 .icono-input {
     width: 22px;
     height: 22px;
     cursor: pointer;
 }
 
-/* Input con mismo tamaño de antes */
 .chat-input input {
     flex: 1;
     margin: 0 -3px;  

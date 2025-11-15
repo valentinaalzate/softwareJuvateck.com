@@ -57,7 +57,6 @@
   </header>
 
  <main class="contenido-clientes">
-  <!-- Pestaña única fuera del panel gris -->
   <div class="tabs-clientes">
     <button class="tab-btn active">
       <img src="imagenes/usuario.png" alt="Usuario" class="icono-usuario">
@@ -67,7 +66,6 @@
 
   <!-- Panel gris -->
   <section class="panel-clientes">
-    <!-- Controles: solo búsqueda y filtro -->
     <div class="controles-clientes">
       <input type="text" placeholder="Buscar cliente..." />
       <button class="btn-buscar">Buscar</button>
@@ -83,7 +81,6 @@
       </div>
     </div>
 
-    <!-- Tabla de clientes -->
     <div class="tabla-clientes">
       <table>
         <thead>
@@ -113,13 +110,13 @@
       </table>
     </div>
 
-    <!-- Botones inferiores -->
     <div class="acciones-clientes">
       <button class="btn-editar" onclick="abrirFormularioAgregar()">Agregar usuario</button>
       <button class="btn-eliminar" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
     </div>
   </section>
 </main>
+
 <section id="formulario-cliente2" class="formulario-cliente2" style="display: none;">
   <form class="formulario-detalle" onsubmit="agregarCliente(); return false;">
     <h3>Registrar Cliente</h3>
@@ -178,14 +175,14 @@
 </div>
 
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
+  
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
+ 
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
+    
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
@@ -195,18 +192,18 @@
   document.getElementById("formulario-cliente2").style.display = "block";
 }
 
-// Cerrar formulario de cliente
+
 function cerrarFormularioCliente() {
   document.getElementById("formulario-cliente2").style.display = "none";
 }
 
-// Agregar cliente y mostrar mensaje
+
 function agregarCliente() {
-  // Aquí podrías capturar los valores de los inputs si quieres guardarlos
+  
   const nombre = document.getElementById("nombre-cliente").value;
   const apellido = document.getElementById("apellido-cliente").value;
 
-  // Cerrar formulario
+  
   cerrarFormularioCliente();
 
   // Mostrar mensaje de confirmación
@@ -216,24 +213,23 @@ function agregarCliente() {
   texto.textContent = `Cliente ${nombre} ${apellido} registrado correctamente`;
   mensaje.style.display = "flex";
 
-  // Ocultar mensaje automáticamente después de 3 segundos
   setTimeout(() => {
     mensaje.style.display = "none";
-  }, 3000);
+  }, 2000);
 }
 
-// Activar selección de filas en clientes
+
 document.querySelectorAll(".tabla-clientes tbody tr").forEach(fila => {
   fila.addEventListener("click", function (e) {
 
-    // Evita que el click en el botón "Editar" seleccione la fila
+    
     if (e.target.tagName === "BUTTON") return;
 
-    // Quitar selección previa
+    
     document.querySelectorAll(".tabla-clientes tbody tr")
       .forEach(f => f.classList.remove("fila-seleccionada"));
 
-    // Seleccionar la fila actual
+   
     this.classList.add("fila-seleccionada");
   });
 });

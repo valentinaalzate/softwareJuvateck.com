@@ -77,7 +77,7 @@
     <img src="imagenes/chat.png" alt="Chat Soporte">
 </div>
 
-<!-- Ventana de Chat Oculta -->
+<!-- Ventana de Chat-->
 <div id="chat-box" class="chat-box">
     <div class="chat-header">
         <span>Chat de ayuda</span>
@@ -109,14 +109,11 @@
 </div>
 
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }

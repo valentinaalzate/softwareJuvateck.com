@@ -265,11 +265,11 @@
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Activar pestaña visual
+      // Activa pestaña visual
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      // Mostrar contenido correspondiente
+      // Muestra el contenido correspondiente
       const targetId = tab.getAttribute('data-tab');
       contenidos.forEach(c => {
         c.style.display = c.id === targetId ? 'block' : 'none';
@@ -278,10 +278,10 @@
   });
 </script>
   <script>
-  // Detecta la página actual 
+  
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
+  
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
@@ -296,7 +296,7 @@
 <section id="formulario-pedido" class="formulario-pedido" style="display: none;">
 
   <form class="formulario-detalle" onsubmit="mostrarMensajeFactura(); return false;">
-    <!-- Fecha y N° Pedido -->
+   
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Fecha:</label>
@@ -308,7 +308,7 @@
       </div>
     </div>
 
-    <!-- Cliente -->
+   
     <div class="grupo-campos">
       <label>Cliente:</label>
       <div class="cliente-registro">
@@ -317,7 +317,7 @@
       </div>
     </div>
 
-    <!-- Teléfono y Dirección -->
+   
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Teléfono:</label>
@@ -329,13 +329,11 @@
       </div>
     </div>
 
-    <!-- Email -->
     <div class="grupo-campos">
       <label>Email:</label>
       <input type="email" />
     </div>
 
-    <!-- Tabla de productos -->
     <div class="tabla-productos">
       <table>
         <thead>
@@ -353,13 +351,11 @@
       </table>
     </div>
 
-    <!-- Total -->
     <div class="grupo-campos">
       <label>Total:</label>
       <input type="text" />
     </div>
 
-    <!-- Empleado y Documento Empleado -->
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Empleado:</label>
@@ -376,7 +372,6 @@
       </div>
     </div>
 
-    <!-- Botones -->
      <div class="acciones-pedido">
       <button type="submit" class="btn-confirmar">Tomar Pedido</button>
       <button type="button" class="btn-cancelar" onclick="cerrarFormulario()">Cancelar</button>
@@ -388,7 +383,6 @@
 <section id="formulario-ingresar" class="formulario-ingresar" style="display: none;">
   <form class="formulario-detalle2" onsubmit="mostrarMensajeFactura(); return false;">
     
-    <!-- Fecha y N° Pedido -->
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Fecha:</label>
@@ -400,7 +394,6 @@
       </div>
     </div>
 
-    <!-- Tabla de productos agregados -->
     <div class="tabla-productos">
       <table>
         <thead>
@@ -433,7 +426,6 @@
         </button>
       </div>
 
-      <!-- Precio y Cantidad debajo -->
       <div class="fila-doble">
         <div class="grupo-campos">
           <label>Precio:</label>
@@ -446,7 +438,6 @@
       </div>
     </div>
 
-    <!-- Cliente -->
     <div class="grupo-campos">
       <label>Cliente:</label>
       <div class="cliente-registro">
@@ -460,7 +451,6 @@
       </div>
     </div>
 
-    <!-- Teléfono y Dirección -->
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Teléfono:</label>
@@ -472,13 +462,11 @@
       </div>
     </div>
 
-    <!-- Email -->
     <div class="grupo-campos">
       <label>Email:</label>
       <input type="email" />
     </div>
 
-    <!-- Empleado y Documento Empleado -->
     <div class="fila-doble">
       <div class="grupo-campos">
         <label>Empleado:</label>
@@ -495,7 +483,6 @@
       </div>
     </div>
 
-    <!-- Botones -->
      <div class="acciones-pedido2">
       <button type="submit" class="btn-crear">Crear Pedido</button>
       <button type="button" class="btn-cancelar" onclick="cerrarFormularioIngreso()">Cancelar</button>
@@ -553,7 +540,7 @@
 </section>
 
 <script>
-  let numeroPedido = 1; // 🔹 Controla el número del pedido
+  let numeroPedido = 1; // Controla el número del pedido
 
   const btnsVerMas = document.querySelectorAll('.btn-ver');
   const btnsTomar = document.querySelectorAll('.btn-tomar');
@@ -562,7 +549,7 @@
   const formularioIngresar = document.getElementById('formulario-ingresar'); 
   const filas = document.querySelectorAll('.tabla-pedidos tbody tr');
 
-  // Mostrar formulario al hacer clic en "Ver más"
+  // muestra el formulario al hacer clic en "Ver más"
   btnsVerMas.forEach(btn => {
     btn.addEventListener('click', () => {
       formulario.style.display = 'block';
@@ -591,7 +578,7 @@
     }
   });
 
-  // Mostrar formulario solo si hay fila seleccionada al hacer clic en "Tomar Pedido"
+  // muestra formulario solo si hay fila seleccionada al hacer clic en "Tomar Pedido"
   btnsTomar.forEach(btn => {
     btn.addEventListener('click', () => {
       const seleccionada = document.querySelector('.fila-seleccionada');
@@ -608,7 +595,7 @@
     });
   });
 
-  // Mostrar formulario de ingresar pedido al hacer clic en "Ingresar Pedido"
+  // muestra formulario de ingresar pedido al hacer clic en "Ingresar Pedido"
   btnsIngresar.forEach(btn => {
     btn.addEventListener('click', () => {
       formularioIngresar.style.display = 'block';
@@ -620,7 +607,6 @@
     });
   });
 
-  // Cancelar formularios
   function cerrarFormulario() {
     formulario.style.display = 'none';
   }
@@ -643,7 +629,6 @@
     });
   }
 
-  // 🔹 Mostrar mensaje factura y SOLO ahí cambiar número de pedido
   function mostrarMensajeFactura() {
     const mensaje = document.getElementById('mensaje-factura');
     mensaje.style.display = 'flex';
@@ -651,7 +636,6 @@
     setTimeout(() => {
       mensaje.style.display = 'none';
 
-      //  Solo cambiar número de pedido cuando se genera la factura
       numeroPedido++;
       const nuevoCodigo = `PED-${numeroPedido.toString().padStart(4, '0')}`;
       document.querySelector('#formulario-ingresar #codigo-ingreso').value = nuevoCodigo;

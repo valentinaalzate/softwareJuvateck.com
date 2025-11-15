@@ -273,43 +273,38 @@
   <!--formulario de factura-->
  <div id="formulario-factura" class="formulario-factura" style="display: none;">
   <div id="contenido-factura" class="formulario-detalle">
-    <!-- Fecha -->
     <div class="fila-campo">
       <label>Fecha:</label>
       <input type="text" value="13/11/2025" />
     </div>
 
-   <!-- Nº Factura y Nº Pedido -->
-<div class="fila-doble">
-  <div class="fila-campo">
-    <label>N° Factura:</label>
-    <input type="text" value="F001" />
-  </div>
-  <div class="fila-campo">
-    <label>N° Pedido:</label>
-    <input type="text" value="P001" />
-  </div>
-</div>
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>N° Factura:</label>
+        <input type="text" value="F001" />
+      </div>
+      <div class="fila-campo">
+        <label>N° Pedido:</label>
+        <input type="text" value="P001" />
+      </div>
+    </div>
 
-<!-- Cliente -->
-<div class="fila-campo">
-  <label>Cliente:</label>
-  <input type="text" value="Juan Pérez" />
-</div>
+    <div class="fila-campo">
+      <label>Cliente:</label>
+      <input type="text" value="Juan Pérez" />
+    </div>
 
-<!-- Teléfono y Dirección (misma clase que los demás) -->
-<div class="fila-doble">
-  <div class="fila-campo">
-    <label>Teléfono:</label>
-    <input type="text" />
-  </div>
-  <div class="fila-campo">
-    <label>Dirección:</label>
-    <input type="text" />
-  </div>
-</div>
+    <div class="fila-doble">
+      <div class="fila-campo">
+        <label>Teléfono:</label>
+        <input type="text" />
+      </div>
+      <div class="fila-campo">
+        <label>Dirección:</label>
+        <input type="text" />
+      </div>
+    </div>
 
-    <!-- Tabla de productos -->
     <div class="tabla-productos">
       <table>
         <thead>
@@ -356,35 +351,32 @@
 
     <hr class="linea-total" />
 
-    <!-- Estado y Total -->
     <div class="fila-total">
-  <div class="fila-campo">
-    <label>Estado:</label>
-    <input type="text" value="Pendiente" />
-  </div>
-  <div class="fila-campo">
-    <label>Total:</label>
-    <input type="text" value="$39.000" />
-  </div>
-</div>
+      <div class="fila-campo">
+        <label>Estado:</label>
+        <input type="text" value="Pendiente" />
+      </div>
+      <div class="fila-campo">
+        <label>Total:</label>
+        <input type="text" value="$39.000" />
+      </div>
+    </div>
 
-    <!-- Botones -->
    <div class="acciones-factura">
       <button class="btn-descargar" onclick="descargarPDF()">Descargar</button>
       <button class="btn-cancelar" onclick="cerrarFormulario()">Cerrar</button>
     </div>
   </div>
 </div>
+
 <!-- formulario de edición -->
 <div id="formulario-editar" class="formulario-editar" style="display: none;">
   <div class="formulario-detalle">
-    <!-- Fecha -->
     <div class="fila-campo">
       <label>Fecha:</label>
       <input type="text" value="13/11/2025" />
     </div>
 
-    <!-- Nº Factura y Nº Pedido -->
     <div class="fila-doble">
       <div class="fila-campo">
         <label>N° Factura:</label>
@@ -396,13 +388,11 @@
       </div>
     </div>
 
-    <!-- Cliente -->
     <div class="fila-campo">
       <label>Cliente:</label>
       <input type="text" value="Juan Pérez" />
     </div>
 
-    <!-- Teléfono y Dirección -->
     <div class="fila-doble">
       <div class="fila-campo">
         <label>Teléfono:</label>
@@ -414,7 +404,6 @@
       </div>
     </div>
 
-    <!-- Tabla de productos -->
     <div class="tabla-productos">
       <table>
         <thead>
@@ -453,7 +442,6 @@
 
     <hr class="linea-total" />
 
-    <!-- Estado y Total -->
     <div class="fila-total">
       <div class="fila-campo">
         <label>Estado:</label>
@@ -469,7 +457,6 @@
       </div>
     </div>
 
-    <!-- Botones -->
      <div class="acciones-factura2">
       <button class="btn-editar2" onclick="guardarEdicion()">Editar</button>
       <button class="btn-cancelar" onclick="cerrarFormularioEditar()">Cerrar</button>
@@ -478,21 +465,17 @@
 </div>
 
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
 
-  //Para las pestañas
   const tabs = document.querySelectorAll('.tabs-facturas .tab-btn');
   const contenidos = document.querySelectorAll('.panel-facturas .contenido-tab');
 
@@ -511,7 +494,7 @@
 
   
 
-// Detectar clic en botones "Enviar"
+// Detecta clic en el boton "Enviar"
 const btnsEnviar = document.querySelectorAll('.btn-enviar');
 
 btnsEnviar.forEach(btn => {
@@ -519,7 +502,7 @@ btnsEnviar.forEach(btn => {
     const mensaje = document.getElementById('mensaje-envio-factura');
     mensaje.style.display = 'flex';
 
-    // Ocultar automáticamente después de 2 segundos
+    // Oculta automáticamente después de 2 segundos
     setTimeout(() => {
       mensaje.style.display = 'none';
     }, 2000);
@@ -535,7 +518,7 @@ campana.addEventListener('click', () => {
   notificacion.style.display = visible ? 'none' : 'flex';
 });
 
-// Mostrar al hacer clic en "Ver más"
+// Muestra el formulario al hacer clic en el boton "ver mas"
 document.querySelectorAll('.btn-ver').forEach(btn => {
   btn.addEventListener('click', () => {
     const target = btn.getAttribute('data-target');
@@ -543,7 +526,6 @@ document.querySelectorAll('.btn-ver').forEach(btn => {
   });
 });
 
-// Cerrar formulario
 function cerrarFormulario() {
   document.getElementById('formulario-factura').style.display = 'none';
 }
@@ -589,7 +571,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //Deseleccionar al hacer clic fuera de tabla y acciones
   document.addEventListener('click', (e) => {
     const esClicEnTabla = e.target.closest('.tabla-facturas');
     const esClicEnAcciones = e.target.closest('.acciones-facturas');
@@ -599,7 +580,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Activar botón Eliminar en todas las pestañas
   document.querySelectorAll('.btn-eliminar').forEach(btn => {
     btn.addEventListener('click', mostrarConfirmacionEliminar);
   });
@@ -613,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const elemento = document.getElementById("contenido-factura");
     const botones = document.querySelector(".acciones-factura");
 
-    // Ocultar botones temporalmente
+    // Oculta los botones temporalmente
     botones.style.display = "none";
 
     const opciones = {
@@ -628,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
     margin: 4,
     filename: 'Factura.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2.2 }, // 🔹 más grande
+    html2canvas: { scale: 2.2 }, 
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     }).from(elemento).save().then(() => {
       botones.style.display = "flex";

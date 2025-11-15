@@ -87,7 +87,7 @@
           </select>
         </div>
 
-        <!-- Exportar junto a la tabla -->
+       
         <button class="btn-exportar">
            <img src="imagenes/exportar.png" alt="Exportar" class="icono-exportar">
            Exportar
@@ -124,7 +124,7 @@
         </table>
       </div>
 
-      <!-- Único botón Eliminar a la derecha -->
+      
       <div class="acciones-reportes">
         <button class="btn-eliminar-rojo" onclick="mostrarConfirmacionEliminar()">Eliminar</button>
       </div>
@@ -153,7 +153,7 @@
           </select>
         </div>
 
-        <!-- Exportar junto a la tabla -->
+       
        <button class="btn-exportar">
            <img src="imagenes/exportar.png" alt="Exportar" class="icono-exportar">
            Exportar
@@ -201,13 +201,13 @@
 <div id="formulario-reporte" class="formulario-reporte" style="display: none;">
   <div id="contenido-reporte" class="formulario-detalle">
     
-    <!-- Fecha -->
+    
     <div class="fila-campo">
       <label>Fecha:</label>
       <input type="text" value="13/11/2025" />
     </div>
 
-    <!-- Nº Reporte y Nº Pedido en la misma fila -->
+    
     <div class="fila-doble">
       <div class="fila-campo">
         <label>N° Reporte:</label>
@@ -219,13 +219,11 @@
       </div>
     </div>
 
-    <!-- Cliente -->
     <div class="fila-campo">
       <label>Cliente:</label>
       <input type="text" value="Juan Pérez" />
     </div>
 
-    <!-- Teléfono y Dirección -->
     <div class="fila-doble">
       <div class="fila-campo">
         <label>Teléfono:</label>
@@ -237,7 +235,6 @@
       </div>
     </div>
 
-    <!-- Tabla de productos -->
     <div class="tabla-productos">
       <table>
         <thead>
@@ -272,7 +269,6 @@
 
     <hr class="linea-total" />
 
-    <!-- Estado y Total -->
     <div class="fila-total">
       <div class="fila-campo">
         <label>Estado:</label>
@@ -292,20 +288,16 @@
 </div>
 
   <script>
-  // Detecta la página actual (por ejemplo: "home.html")
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Busca todos los enlaces del menú
   const menuLinks = document.querySelectorAll(".item-menu a");
 
   menuLinks.forEach(link => {
-    // Si el href del enlace coincide con la página actual, agrega la clase "active"
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
 
-  // Pestañas para Reporte (Ventas y Reportes pendientes)
 document.addEventListener("DOMContentLoaded", function () {
   const tabButtons = document.querySelectorAll(".tabs-reportes .tab-btn");
   const tabContents = document.querySelectorAll(".contenido-tab");
@@ -314,14 +306,11 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", function () {
       const targetTab = this.getAttribute("data-tab");
 
-      // Desactivar todos los botones y ocultar tabs
       tabButtons.forEach((b) => b.classList.remove("active"));
       tabContents.forEach((tab) => (tab.style.display = "none"));
 
-      // Activar el botón actual
       this.classList.add("active");
 
-      // Mostrar contenido correspondiente
       const targetContent = document.getElementById(targetTab);
       if (targetContent) {
         targetContent.style.display = "block";
@@ -329,12 +318,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Mostrar por defecto la pestaña Ventas
   const ventasTab = document.getElementById("ventas");
   if (ventasTab) ventasTab.style.display = "block";
 });
 
-// Abrir formulario de reporte
+// Abre formulario de reporte
 function abrirFormularioReporte() {
   const formulario = document.getElementById("formulario-reporte");
   if (formulario) {
@@ -342,7 +330,6 @@ function abrirFormularioReporte() {
   }
 }
 
-// Cerrar formulario de reporte
 function cerrarFormulario() {
   const formulario = document.getElementById("formulario-reporte");
   if (formulario) {
@@ -351,7 +338,6 @@ function cerrarFormulario() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  //Selección de filas en cualquier tabla de Reportes
   document.querySelectorAll('.tabla-reportes tbody tr').forEach(fila => {
     fila.addEventListener('click', (e) => {
       const tablaActual = fila.closest('.tabla-reportes');
@@ -361,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  //Deseleccionar al hacer clic fuera de tabla y acciones
   document.addEventListener('click', (e) => {
     const esClicEnTabla = e.target.closest('.tabla-reportes');
     const esClicEnAcciones = e.target.closest('.acciones-reportes');
